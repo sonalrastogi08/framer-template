@@ -8,3 +8,4 @@ Rules for building this Framer template. Each rule is added as the owner states 
 2. **Animation: use Framer Motion and GSAP.** Build animations with Framer Motion (Framer's native animation) and GSAP.
 3. **Effects: use rich scroll and motion effects.** Use effects such as horizontal scrolling, zoom, and stagger (and similar types of effects) across the template's sections.
 4. **Color palette: trendy, catchy, modern.** Keep the color palette trendy, catchy, and modern.
+5. **Animation inspiration: motionsites.ai.** Use https://motionsites.ai/ as the reference for animation inspiration.
