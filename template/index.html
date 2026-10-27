@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Velvet Crumb — Celebration cakes, baked fresh in Brooklyn</title>
+<meta name="description" content="Small-batch celebration cakes, cupcakes and custom wedding cakes. Same-day delivery, pickup or nationwide shipping.">
+<meta name="theme-color" content="#FBF4EA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="assets/img/cupcake.svg">
+<!-- LocalBusiness / Bakery schema — fill in your own details (see docs/FRAMER-BUILD-GUIDE.md) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Bakery","name":"Velvet Crumb Cake Studio","url":"https://velvetcrumb.example","telephone":"+1-555-0142","priceRange":"$$","servesCuisine":"Cakes, pâtisserie","address":{"@type":"PostalAddress","streetAddress":"48 Mercer Lane","addressLocality":"Brooklyn","addressRegion":"NY","postalCode":"11201","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"09:00","closes":"17:00"}],"hasMenu":"https://velvetcrumb.example/shop"}
+</script>
+<script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body data-page="home">
+<div class="announce" role="region" aria-label="Announcements">
+  <div class="announce__track">
+    <span>Order by 12pm for same-day delivery in Brooklyn &amp; Manhattan</span>
+    <span>Autumn drop: Pear &amp; Brown Butter cake — pre-orders open Monday 11am</span>
+    <span>Free delivery on orders over $100</span>
+    <span>Custom &amp; wedding cakes: book 3+ weeks ahead</span>
+    <span>Order by 12pm for same-day delivery in Brooklyn &amp; Manhattan</span>
+    <span>Autumn drop: Pear &amp; Brown Butter cake — pre-orders open Monday 11am</span>
+    <span>Free delivery on orders over $100</span>
+    <span>Custom &amp; wedding cakes: book 3+ weeks ahead</span>
+  </div>
+</div>
+<header class="header" data-header>
+  <div class="container header__inner">
+    <a href="index.html" class="logo" aria-label="Velvet Crumb home"><b>Velvet Crumb</b><small>Cake Studio · Est. 2019</small></a>
+    <nav class="nav" aria-label="Main">
+      <a href="shop.html" data-nav="shop">Shop cakes</a>
+      <a href="custom-cakes.html" data-nav="custom">Custom &amp; Wedding</a>
+      <a href="about.html" data-nav="about">Our story</a>
+      <a href="visit.html" data-nav="visit">Visit &amp; FAQ</a>
+    </nav>
+    <div class="header__actions">
+      <button class="icon-btn" data-search aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <a class="icon-btn" href="shop.html" aria-label="Basket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count" data-cart-count>0</span></a>
+      <a class="btn btn--small" href="shop.html" data-magnetic>Order a cake <span class="arrow">→</span></a>
+      <button class="icon-btn menu-toggle" data-menu-open aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16M4 16h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" data-menu aria-hidden="true">
+  <button class="icon-btn mobile-menu__close" data-menu-close aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <nav aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop cakes</a>
+    <a href="custom-cakes.html">Custom &amp; Wedding</a>
+    <a href="about.html">Our story</a>
+    <a href="visit.html">Visit &amp; FAQ</a>
+  </nav>
+  <div style="display:grid;gap:8px;font-size:.9rem;opacity:.8">
+    <span>48 Mercer Lane, Brooklyn</span><span>hello@velvetcrumb.example · (555) 0142</span>
+  </div>
+</div>
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero__stage">
+    <div class="hero__word" data-hero-word aria-hidden="true">Velvet</div>
+    <img class="hero__cake" data-hero-cake src="assets/img/cake-pistachio.svg" alt="Pistachio and strawberry drip cake on a white cake stand" width="400" height="400">
+    <img class="hero__float hero__float--1" data-float="-60" src="assets/img/macarons.svg" alt="" aria-hidden="true">
+    <img class="hero__float hero__float--2" data-float="80" src="assets/img/cupcake.svg" alt="" aria-hidden="true">
+    <img class="hero__float hero__float--3" data-float="-120" src="assets/img/tart.svg" alt="" aria-hidden="true">
+
+    <div class="hero__badge" data-hero-badge>
+      <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs><text font-size="10.5" font-weight="800" letter-spacing="3.2" fill="#FFFDF8"><textPath href="#circ">SAME-DAY DELIVERY · ORDER BY 12PM ·</textPath></text></svg>
+      <strong>Fresh<br>today</strong>
+    </div>
+    <span class="script hero__script" data-hero-script>baked fresh, daily ♡</span>
+
+    <div class="hero__copy">
+      <span class="eyebrow" data-hero-fade>Brooklyn cake studio</span>
+      <h1 data-split>Cakes that make <em>the moment.</em></h1>
+      <p class="muted" data-hero-fade>Small-batch celebration cakes with real butter, seasonal fruit and zero shortcuts.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap" data-hero-fade>
+        <a class="btn" href="shop.html" data-magnetic>Shop cakes <span class="arrow">→</span></a>
+        <a class="btn btn--ghost" href="custom-cakes.html">Custom order</a>
+      </div>
+    </div>
+
+    <div class="hero__side" data-hero-fade>
+      <div class="order-modes" role="tablist" aria-label="How do you want it?" data-order-modes>
+        <span class="order-modes__ind" data-ind></span>
+        <button role="tab" aria-selected="true" data-note="Order by <b>12pm</b> for same-day delivery · from $9">Delivery</button>
+        <button role="tab" aria-selected="false" data-note="Pick a studio, a day and a <b>30-min slot</b>">Pickup</button>
+        <button role="tab" aria-selected="false" data-note="Ships frozen, <b>48 states</b> · free over $100">Nationwide</button>
+        <button role="tab" aria-selected="false" data-note="Also on <b>Uber Eats</b> &amp; <b>DoorDash</b>">Apps</button>
+      </div>
+      <p class="order-note" data-order-note>Order by <b>12pm</b> for same-day delivery · from $9</p>
+      <div class="rating"><div class="avatars"><span style="background:#F3B6BE"></span><span style="background:#B9CB8C"></span><span style="background:#F5D589"></span></div><div><span class="stars">★★★★★</span> <b>4.9</b> · 2,300+ reviews</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" data-marquee aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__item">Pistachio Rose <img src="assets/img/macarons.svg" alt=""> Midnight Ganache <img src="assets/img/cupcake.svg" alt=""> Red Velvet <img src="assets/img/tart.svg" alt=""> Strawberry Shortcake <img src="assets/img/slice-redvelvet.svg" alt=""></div>
+    <div class="marquee__item">Pistachio Rose <img src="assets/img/macarons.svg" alt=""> Midnight Ganache <img src="assets/img/cupcake.svg" alt=""> Red Velvet <img src="assets/img/tart.svg" alt=""> Strawberry Shortcake <img src="assets/img/slice-redvelvet.svg" alt=""></div>
+  </div>
+</div>
+
+<!-- ============ STATEMENT ============ -->
+<section class="section">
+  <div class="container" style="display:grid;gap:40px">
+    <span class="eyebrow">Why Velvet Crumb</span>
+    <p class="statement" data-highlight>We bake small-batch cakes <span class="inline-img"><img src="assets/img/cake-strawberry.svg" alt=""></span> for birthdays, weddings and every just-because in between — with real butter, seasonal fruit and absolutely no shortcuts.</p>
+    <div class="stats" data-stagger>
+      <div class="stat"><strong data-count="12400">0</strong><span>cakes delivered this year</span></div>
+      <div class="stat"><strong data-count="4.9" data-decimals="1">0</strong><span>average rating, 2,300+ reviews</span></div>
+      <div class="stat"><strong data-count="48" data-suffix="h">0</strong><span>notice for most celebration cakes</span></div>
+      <div class="stat"><strong data-count="3">0</strong><span>studios across Brooklyn &amp; Manhattan</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BESTSELLERS — horizontal scroll ============ -->
+<section class="hscroll bg-oat" data-hscroll>
+  <div class="hscroll__pin">
+    <div class="container section-head" style="margin-bottom:0">
+      <div style="display:grid;gap:16px"><span class="eyebrow">Bestsellers</span><h2>The cakes everyone <em>asks for.</em></h2></div>
+      <p class="lead">Sizes from 6" to 10". Every cake lists its lead time, so you always know when to order.</p>
+    </div>
+    <div class="hscroll__track" data-hscroll-track>
+      <!-- Product card component: variants Default / Sold out / Few left -->
+      <article class="card" style="--tint:var(--pistachio-soft)">
+        <div class="card__media"><div class="card__badges"><span class="pill pill--hot">Signature</span></div><button class="card__fav" aria-label="Save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button><img src="assets/img/cake-pistachio.svg" alt="Pistachio Rose cake"></div>
+        <div class="card__body"><a href="product.html" class="card__title">Pistachio Rose</a>
+          <div class="card__meta"><span>Serves 8–10 · 48h notice</span></div>
+          <div class="sizes" data-sizes><button aria-pressed="true" data-price="58">6"</button><button aria-pressed="false" data-price="78">8"</button><button aria-pressed="false" data-price="104">10"</button></div>
+          <div class="card__meta"><span class="card__price" data-price-out>$58</span><button class="add-btn" data-add aria-label="Add Pistachio Rose to basket">+</button></div></div>
+      </article>
+      <article class="card" style="--tint:#EAD9CF">
+        <div class="card__media"><div class="card__badges"><span class="pill">Bestseller</span></div><button class="card__fav" aria-label="Save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button><img src="assets/img/cake-chocolate.svg" alt="Midnight Ganache cake"></div>
+        <div class="card__body"><a href="product.html" class="card__title">Midnight Ganache</a>
+          <div class="card__meta"><span>Serves 8–10 · 24h notice</span></div>
+          <div class="sizes" data-sizes><button aria-pressed="true" data-price="54">6"</button><button aria-pressed="false" data-price="72">8"</button><button aria-pressed="false" data-price="98">10"</button></div>
+          <div class="card__meta"><span class="card__price" data-price-out>$54</span><button class="add-btn" data-add aria-label="Add Midnight Ganache to basket">+</button></div></div>
+      </article>
+      <article class="card" style="--tint:var(--blush)">
+        <div class="card__media"><div class="card__badges"><span class="pill pill--few"><span class="dot"></span>Few left today</span></div><button class="card__fav" aria-label="Save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button><img src="assets/img/cake-raspberry.svg" alt="Raspberry Silk cake"></div>
+        <div class="card__body"><a href="product.html" class="card__title">Raspberry Silk</a>
+          <div class="card__meta"><span>Serves 8–10 · 48h notice</span></div>
+          <div class="sizes" data-sizes><button aria-pressed="true" data-price="56">6"</button><button aria-pressed="false" data-price="76">8"</button><button aria-pressed="false" data-price="102">10"</button></div>
+          <div class="card__meta"><span class="card__price" data-price-out>$56</span><button class="add-btn" data-add aria-label="Add Raspberry Silk to basket">+</button></div></div>
+      </article>
+      <article class="card" style="--tint:#FFF0D6">
+        <div class="card__media"><div class="card__badges"><span class="pill pill--fresh"><span class="dot"></span>Fresh today</span></div><button class="card__fav" aria-label="Save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button><img src="assets/img/cake-strawberry.svg" alt="Strawberry Shortcake"></div>
+        <div class="card__body"><a href="product.html" class="card__title">Strawberry Shortcake</a>
+          <div class="card__meta"><span>Serves 8–10 · Same day</span></div>
+          <div class="sizes" data-sizes><button aria-pressed="true" data-price="48">6"</button><button aria-pressed="false" data-price="66">8"</button><button aria-pressed="false" data-price="90">10"</button></div>
+          <div class="card__meta"><span class="card__price" data-price-out>$48</span><button class="add-btn" data-add aria-label="Add Strawberry Shortcake to basket">+</button></div></div>
+      </article>
+      <article class="card is-sold" style="--tint:#F3DCDC">
+        <div class="card__media"><div class="card__badges"><span class="pill pill--sold">Sold out · back Fri</span></div><img src="assets/img/slice-redvelvet.svg" alt="Red Velvet cake"></div>
+        <div class="card__body"><a href="product.html" class="card__title">Classic Red Velvet</a>
+          <div class="card__meta"><span>Serves 8–10 · 24h notice</span></div>
+          <div class="sizes"><button aria-pressed="true">6"</button><button aria-pressed="false">8"</button></div>
+          <div class="card__meta"><span class="card__price">$52</span><button class="add-btn" aria-label="Sold out" disabled>+</button></div></div>
+      </article>
+      <article class="card" style="--tint:#E7E0F0">
+        <div class="card__media"><div class="card__badges"><span class="pill">Box of 6–12</span></div><img src="assets/img/macarons.svg" alt="Macaron gift box"></div>
+        <div class="card__body"><a href="product.html" class="card__title">Macaron Box</a>
+          <div class="card__meta"><span>Ships nationwide</span></div>
+          <div class="sizes" data-sizes><button aria-pressed="true" data-price="24">6 pc</button><button aria-pressed="false" data-price="44">12 pc</button></div>
+          <div class="card__meta"><span class="card__price" data-price-out>$24</span><button class="add-btn" data-add aria-label="Add Macaron Box to basket">+</button></div></div>
+      </article>
+      <div class="hscroll__end"><span class="script" style="color:var(--butter)">there's more…</span><h3>See all 40+ cakes &amp; bakes</h3><a class="btn btn--light" href="shop.html">Open the shop <span class="arrow">→</span></a></div>
+    </div>
+    <div class="hscroll__progress"><span data-hscroll-progress></span></div>
+  </div>
+</section>
+
+<!-- ============ SIGNATURE — zoom reveal ============ -->
+<section class="zoom" data-zoom aria-label="Signature cake">
+  <div class="zoom__sticky">
+    <span class="zoom__side zoom__side--l" data-zoom-side="-1">Our</span>
+    <span class="zoom__side zoom__side--r" data-zoom-side="1">signature</span>
+    <div class="zoom__frame" data-zoom-frame><img src="assets/img/cake-chocolate.svg" alt="Midnight Ganache signature cake" data-zoom-img></div>
+    <div class="zoom__text"><h2 data-zoom-title style="opacity:0">The Midnight <em style="color:var(--butter)">Ganache.</em></h2></div>
+    <div class="zoom__caption" data-zoom-caption>
+      <span class="pill">70% single-origin chocolate</span><span class="pill">Salted caramel core</span><span class="pill">Since day one</span>
+      <a class="btn btn--light btn--small" href="product.html" style="pointer-events:auto">Order the signature <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FRESH THIS WEEK ============ -->
+<section class="section">
+  <div class="container board">
+    <div class="board__aside">
+      <span class="eyebrow">Fresh this week</span>
+      <h2>Out of the oven <em>today.</em></h2>
+      <div class="clock" data-clock>08:00</div>
+      <p class="lead">Our board updates every morning. Toggle "fresh today" and "sold out" in the CMS — straight from your phone.</p>
+      <a class="btn btn--ghost" href="shop.html">See full menu <span class="arrow">→</span></a>
+    </div>
+    <div class="board__list" data-stagger>
+      <div class="board__row"><img src="assets/img/cupcake.svg" alt=""><div><h3>Pistachio cupcakes</h3><span class="muted" style="font-size:.85rem">$5 each · box of 6 $28</span></div><span class="time">07:30</span><span class="pill pill--fresh"><span class="dot"></span>Fresh</span></div>
+      <div class="board__row"><img src="assets/img/tart.svg" alt=""><div><h3>Berry custard tart</h3><span class="muted" style="font-size:.85rem">$38 whole · $7 slice</span></div><span class="time">08:00</span><span class="pill pill--fresh"><span class="dot"></span>Fresh</span></div>
+      <div class="board__row"><img src="assets/img/cake-strawberry.svg" alt=""><div><h3>Strawberry shortcake</h3><span class="muted" style="font-size:.85rem">from $48</span></div><span class="time">09:15</span><span class="pill pill--few"><span class="dot"></span>4 left</span></div>
+      <div class="board__row"><img src="assets/img/macarons.svg" alt=""><div><h3>Seasonal macarons</h3><span class="muted" style="font-size:.85rem">$3.5 each</span></div><span class="time">10:00</span><span class="pill pill--fresh"><span class="dot"></span>Fresh</span></div>
+      <div class="board__row is-sold"><img src="assets/img/slice-redvelvet.svg" alt=""><div><h3>Red velvet slices</h3><span class="muted" style="font-size:.85rem">$7 slice</span></div><span class="time">07:00</span><span class="pill pill--sold">Sold out</span></div>
+      <div class="board__row"><img src="assets/img/cake-raspberry.svg" alt=""><div><h3>Pear &amp; brown butter</h3><span class="muted" style="font-size:.85rem">Autumn drop · pre-order</span></div><span class="time">Mon</span><span class="pill pill--hot">New</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OCCASIONS ============ -->
+<section class="section bg-oat">
+  <div class="container">
+    <div class="section-head">
+      <div style="display:grid;gap:16px"><span class="eyebrow">Shop by occasion</span><h2>Whatever you're <em>celebrating.</em></h2></div>
+      <a class="btn btn--ghost" href="shop.html">All occasions <span class="arrow">→</span></a>
+    </div>
+    <div class="occasions" data-stagger>
+      <a class="occasion" data-tilt href="shop.html#birthday" style="background:var(--blush)"><span>24 cakes</span><img src="assets/img/cake-raspberry.svg" alt=""><h3>Birthday</h3></a>
+      <a class="occasion" data-tilt href="custom-cakes.html" style="background:var(--paper)"><span>Bespoke</span><img src="assets/img/cake-wedding.svg" alt=""><h3>Wedding</h3></a>
+      <a class="occasion" data-tilt href="shop.html#anniversary" style="background:#EAD9CF"><span>12 cakes</span><img src="assets/img/cake-chocolate.svg" alt=""><h3>Anniversary</h3></a>
+      <a class="occasion" data-tilt href="shop.html#thank-you" style="background:var(--pistachio-soft)"><span>Gift boxes</span><img src="assets/img/gift-box.svg" alt=""><h3>Thank you</h3></a>
+      <a class="occasion" data-tilt href="shop.html#kids" style="background:var(--butter)"><span>18 bakes</span><img src="assets/img/cupcake.svg" alt=""><h3>Kids</h3></a>
+      <a class="occasion" data-tilt href="shop.html#corporate" style="background:#E7E0F0"><span>Bulk orders</span><img src="assets/img/macarons.svg" alt=""><h3>Office</h3></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUSTOM & WEDDING ============ -->
+<section class="section bg-olive" style="border-radius:40px;margin-inline:clamp(8px,1.5vw,20px)">
+  <div class="container" style="display:grid;gap:clamp(56px,8vw,96px)">
+    <div class="split">
+      <div style="display:grid;gap:24px">
+        <span class="eyebrow">Custom &amp; wedding</span>
+        <h2>Your story, <em style="color:var(--butter)">in layers.</em></h2>
+        <p class="lead">From a two-tier birthday to a five-tier wedding centrepiece, we design every bespoke cake with you — tasting box included.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn--light" href="custom-cakes.html#enquire" data-magnetic>Start your enquiry <span class="arrow">→</span></a><a class="btn btn--ghost" style="--fg:var(--cream);border-color:rgba(251,244,234,.5)" href="custom-cakes.html">See the portfolio</a></div>
+      </div>
+      <div style="display:grid;gap:20px">
+        <img src="assets/img/cake-wedding.svg" alt="Three-tier wedding cake with sugar roses" style="width:min(100%,420px);justify-self:center" data-parallax="-40">
+        <div class="price-guide"><div><strong>$8</strong><span>per serving, buttercream</span></div><div><strong>$10</strong><span>per serving, fondant &amp; florals</span></div><div><strong>3 wks</strong><span>minimum lead time</span></div></div>
+      </div>
+    </div>
+    <div class="process" data-process>
+      <div class="process__line"><span data-process-line></span></div>
+      <div class="step"><b>01</b><h3>Enquire</h3><p>Tell us the date, guest count and the feeling you're after.</p></div>
+      <div class="step"><b>02</b><h3>Taste</h3><p>We send a tasting box of six flavours ($45, credited on booking).</p></div>
+      <div class="step"><b>03</b><h3>Design</h3><p>A sketch and quote within 3 working days. Two rounds of edits.</p></div>
+      <div class="step"><b>04</b><h3>Deposit</h3><p>A 30% deposit holds your date. Final details lock 2 weeks out.</p></div>
+      <div class="step"><b>05</b><h3>Deliver</h3><p>We deliver and set up tiered cakes at your venue.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUILD A BOX ============ -->
+<section class="section">
+  <div class="container box-builder">
+    <div style="display:grid;gap:28px">
+      <div style="display:grid;gap:16px"><span class="eyebrow">Build a box</span><h2>Pick your <em>favourites.</em></h2><p class="lead">Mix any cupcake flavours into a box of 6 or 12. Perfect for gifting.</p></div>
+      <div class="flavours" data-flavours>
+        <div class="flavour"><i style="background:var(--pistachio)"></i><b>Pistachio</b><div class="stepper"><button data-dec aria-label="Remove pistachio">−</button><output>0</output><button data-inc aria-label="Add pistachio">+</button></div></div>
+        <div class="flavour"><i style="background:#F3B6BE"></i><b>Raspberry</b><div class="stepper"><button data-dec aria-label="Remove raspberry">−</button><output>0</output><button data-inc aria-label="Add raspberry">+</button></div></div>
+        <div class="flavour"><i style="background:#6B3A28"></i><b>Chocolate</b><div class="stepper"><button data-dec aria-label="Remove chocolate">−</button><output>0</output><button data-inc aria-label="Add chocolate">+</button></div></div>
+        <div class="flavour"><i style="background:var(--butter)"></i><b>Lemon</b><div class="stepper"><button data-dec aria-label="Remove lemon">−</button><output>0</output><button data-inc aria-label="Add lemon">+</button></div></div>
+        <div class="flavour"><i style="background:#C9A9D8"></i><b>Lavender</b><div class="stepper"><button data-dec aria-label="Remove lavender">−</button><output>0</output><button data-inc aria-label="Add lavender">+</button></div></div>
+        <div class="flavour"><i style="background:#FFF3E2"></i><b>Vanilla</b><div class="stepper"><button data-dec aria-label="Remove vanilla">−</button><output>0</output><button data-inc aria-label="Add vanilla">+</button></div></div>
+      </div>
+    </div>
+    <div class="box-visual" data-box>
+      <div style="display:flex;justify-content:space-between;align-items:center"><h3>Your box</h3><span data-box-count style="font-weight:800">0 / 6</span></div>
+      <div class="box-sizes"><button aria-pressed="true" data-box-size="6">Box of 6 · $28</button><button aria-pressed="false" data-box-size="12">Box of 12 · $52</button></div>
+      <div class="box-slots" data-box-slots></div>
+      <div class="box-progress"><span data-box-progress></span></div>
+      <button class="btn btn--light" data-box-add disabled style="justify-content:center;opacity:.5">Fill your box to continue</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section bg-oat">
+  <div class="container section-head">
+    <div style="display:grid;gap:16px"><span class="eyebrow">Kind words</span><h2>Loved in <em>2,300+</em> kitchens.</h2></div>
+    <div class="rating"><span class="stars">★★★★★</span> <b>4.9</b> on Google</div>
+  </div>
+  <div class="reviews">
+    <div class="reviews__row" data-reviews="1">
+      <article class="review"><p>"The pistachio rose cake was the star of my mum's 60th. Three people asked where it came from."</p><footer><i style="background:var(--blush)"></i><div><b>Priya S.</b><br><span class="muted">Birthday · Google</span></div></footer></article>
+      <article class="review"><p>"Ordered at 10am, delivered by 4pm, still perfect. Same-day actually means same-day."</p><footer><i style="background:var(--pistachio)"></i><div><b>Marcus T.</b><br><span class="muted">Delivery · Google</span></div></footer></article>
+      <article class="review"><p>"Our wedding cake tasted even better than the tasting box. Worth every serving."</p><footer><i style="background:var(--butter)"></i><div><b>Elena &amp; Jo</b><br><span class="muted">Wedding · The Knot</span></div></footer></article>
+      <article class="review"><p>"Clear allergen labels saved me so much stress ordering for my nut-free office."</p><footer><i style="background:#C9A9D8"></i><div><b>Dana K.</b><br><span class="muted">Office · Google</span></div></footer></article>
+    </div>
+    <div class="reviews__row" data-reviews="-1">
+      <article class="review"><p>"Built a box of 12 cupcakes for my team — every single flavour was a hit."</p><footer><i style="background:#F3B6BE"></i><div><b>Sam W.</b><br><span class="muted">Build-a-box · Yelp</span></div></footer></article>
+      <article class="review"><p>"Midnight Ganache is dangerously good. We now have a standing Friday order."</p><footer><i style="background:#EAD9CF"></i><div><b>Theo M.</b><br><span class="muted">Regular · Google</span></div></footer></article>
+      <article class="review"><p>"Shipped to my sister in Austin, arrived frozen and beautiful. She cried."</p><footer><i style="background:var(--pistachio-soft)"></i><div><b>Lina R.</b><br><span class="muted">Nationwide · Google</span></div></footer></article>
+      <article class="review"><p>"The most beautiful cake studio in Brooklyn. The croissant tart on Saturdays!"</p><footer><i style="background:var(--butter)"></i><div><b>Ava P.</b><br><span class="muted">Visit · Instagram</span></div></footer></article>
+    </div>
+  </div>
+  <div class="container"><div class="press" aria-label="As seen in (fictional press names)"><span>The Daily Crumb</span><span>Brooklyn Eats</span><span>Sugar &amp; Co.</span><span>Feast Weekly</span><span>Kitchen Notes</span></div></div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div style="display:grid;gap:16px"><span class="eyebrow">Visit us</span><h2>Three studios, <em>one oven</em> of love.</h2></div>
+      <a class="btn btn--ghost" href="visit.html">All locations &amp; hours <span class="arrow">→</span></a>
+    </div>
+    <div class="locations" data-stagger>
+      <article class="location"><div class="location__map" data-map style="--pin:var(--strawberry)"></div><div class="location__body"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><h3>Mercer Lane</h3><span class="pill pill--fresh" data-open-now data-open="8" data-close="18"><span class="dot"></span>Open now</span></div><p class="muted">48 Mercer Lane, Brooklyn</p><dl class="hours"><dt>Tue–Fri</dt><dd>08:00–18:00</dd><dt>Sat–Sun</dt><dd>09:00–17:00</dd></dl><div class="services"><span class="pill">Pickup</span><span class="pill">Seating</span><span class="pill">Cake consults</span></div></div></article>
+      <article class="location"><div class="location__map" data-map style="--pin:var(--olive)"></div><div class="location__body"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><h3>West Village</h3><span class="pill pill--fresh" data-open-now data-open="9" data-close="19"><span class="dot"></span>Open now</span></div><p class="muted">112 Perry Street, New York</p><dl class="hours"><dt>Mon–Sat</dt><dd>09:00–19:00</dd><dt>Sun</dt><dd>10:00–16:00</dd></dl><div class="services"><span class="pill">Pickup</span><span class="pill">Same-day delivery</span></div></div></article>
+      <article class="location"><div class="location__map" data-map style="--pin:var(--gold)"></div><div class="location__body"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><h3>Market stall</h3><span class="pill">Saturdays</span></div><p class="muted">Greenpoint Farmers Market, stall 14</p><dl class="hours"><dt>Sat</dt><dd>08:00–14:00</dd><dt>Pre-orders</dt><dd>by Thu 6pm</dd></dl><div class="services"><span class="pill">Pre-order pickup</span><span class="pill">Slices</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY zoom ============ -->
+<section class="gallery" data-gallery aria-label="Instagram gallery">
+  <div class="gallery__sticky">
+    <div class="gallery__grid" data-gallery-grid>
+      <div style="background:var(--blush)"><img src="assets/img/cupcake.svg" alt=""></div>
+      <div style="background:var(--pistachio-soft)"><img src="assets/img/tart.svg" alt=""></div>
+      <div style="background:var(--butter)"><img src="assets/img/macarons.svg" alt=""></div>
+      <div style="background:#EAD9CF"><img src="assets/img/cake-chocolate.svg" alt=""></div>
+      <div style="background:#E7E0F0"><img src="assets/img/gift-box.svg" alt=""></div>
+      <div style="background:var(--paper)"><img src="assets/img/cake-wedding.svg" alt=""></div>
+      <div style="background:#F3DCDC"><img src="assets/img/slice-redvelvet.svg" alt=""></div>
+      <div class="is-center" style="background:var(--pistachio)" data-gallery-center><img src="assets/img/cake-pistachio.svg" alt=""></div>
+      <div style="background:var(--blush)"><img src="assets/img/cake-raspberry.svg" alt=""></div>
+      <div style="background:var(--pistachio-soft)"><img src="assets/img/cake-strawberry.svg" alt=""></div>
+      <div style="background:var(--butter)"><img src="assets/img/cupcake.svg" alt=""></div>
+      <div style="background:#EAD9CF"><img src="assets/img/tart.svg" alt=""></div>
+      <div style="background:#E7E0F0"><img src="assets/img/macarons.svg" alt=""></div>
+      <div style="background:var(--paper)"><img src="assets/img/cake-chocolate.svg" alt=""></div>
+      <div style="background:#F3DCDC"><img src="assets/img/gift-box.svg" alt=""></div>
+    </div>
+    <div class="gallery__label" data-gallery-label style="opacity:0"><span class="script">follow along</span><h2>@velvetcrumb</h2><a class="btn" href="#" style="pointer-events:auto;margin-top:16px">Follow on Instagram <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="container">
+  <div class="newsletter" data-reveal>
+    <div style="display:grid;gap:16px;position:relative;z-index:1"><span class="eyebrow">The Crumb Club</span><h2 style="font-size:clamp(2rem,4vw,3.4rem)">First dibs on <em>seasonal drops.</em></h2><p class="muted">One email a month. Early pre-order links, a birthday treat on us, and 10% off your first cake.</p></div>
+    <form class="field" data-newsletter><input type="email" required placeholder="Your email address" aria-label="Email address"><button class="btn" type="submit">Join <span class="arrow">→</span></button></form>
+    <img src="assets/img/cupcake.svg" alt="">
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div style="display:grid;gap:20px;align-content:start">
+        <a href="index.html" class="logo"><b>Velvet Crumb</b><small>Cake Studio · Est. 2019</small></a>
+        <p style="max-width:32ch;color:rgba(251,244,234,.75)">Small-batch celebration cakes, baked fresh every morning in Brooklyn with real butter and seasonal fruit.</p>
+        <div class="socials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="TikTok">TT</a><a href="#" aria-label="Pinterest">PI</a></div>
+      </div>
+      <div><h4>Shop</h4><ul><li><a href="shop.html">All cakes</a></li><li><a href="shop.html#cupcakes">Cupcakes &amp; boxes</a></li><li><a href="shop.html#gifts">Gift boxes</a></li><li><a href="product.html">Signature cake</a></li></ul></div>
+      <div><h4>Studio</h4><ul><li><a href="custom-cakes.html">Custom &amp; wedding</a></li><li><a href="about.html">Our story</a></li><li><a href="visit.html">Locations &amp; hours</a></li><li><a href="visit.html#faq">FAQ</a></li></ul></div>
+      <div><h4>Visit</h4><ul><li>48 Mercer Lane, Brooklyn</li><li>Tue–Fri 8–18 · Sat–Sun 9–17</li><li><a href="mailto:hello@velvetcrumb.example">hello@velvetcrumb.example</a></li><li><a href="tel:+15550142">(555) 0142</a></li></ul></div>
+    </div>
+    <div class="footer__word" data-footer-word aria-hidden="true">Velvet</div>
+    <div class="footer__bottom"><span>© 2026 Velvet Crumb Cake Studio. Template by you.</span><span><a href="visit.html#policy">Ordering policy</a> · <a href="#">Allergens</a> · <a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+  </div>
+</footer>
+<div class="toast" data-toast role="status" aria-live="polite"></div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/SplitText.min.js"></script>
+<script src="assets/vendor/motion.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
