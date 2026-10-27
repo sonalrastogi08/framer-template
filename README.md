@@ -11,9 +11,10 @@ There are two independent designs:
 | **Version 2** | `template-v2/` | Cerise Pâtisserie de Nuit | Dark luxury night pâtisserie: black cherry, cherry red, champagne gold, Bodoni Moda | `docs/v2/` |
 | **Version 3** (hero only) | `template-v3/` | Sugarstack | Light candy-pop: pastels, ink outlines, a build-your-cake hero that explodes into layers | `docs/v3/` |
 | **Version 4** (hero only) | `template-v4/` | Rotunda Slice Bar | Butter-yellow food poster: a top-down sampler cake you spin to pick slices for a box of four | `docs/v4/` |
+| **Version 5** (hero only) | `template-v5/` | Blåbär Bakery | Porcelain and Delft cobalt: a live canvas mirror-glaze pour with switchable berry glazes and a morning timeline | `docs/v5/` |
 
-All four follow the same rulebook and research. Versions 1 and 2 have 7 pages; versions 3 and 4 are hero sections only.
-Framer code components for versions 2–4 are in `framer/code-components-v2/`, `-v3/` and `-v4/`.
+All five follow the same rulebook and research. Versions 1 and 2 have 7 pages; versions 3–5 are hero sections only.
+Framer code components for versions 2–5 are in `framer/code-components-v2/` to `-v5/`.
 
 The rest of this README describes version 1. Version 2 has the same structure (`src/`, `build.py`, `assets/`,
 `tools/gen_svgs.py`).

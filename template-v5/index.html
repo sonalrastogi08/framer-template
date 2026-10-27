@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blåbär Bakery</title>
+<meta name="description" content="One mirror-glazed berry cake, poured fresh at 7am every day. Blueberry, lingonberry or cloudberry. Pickup from 10am.">
+<meta name="theme-color" content="#F5F3EE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- ===================== HERO (version 5) ===================== -->
+<section class="hero" data-hero aria-label="The morning pour">
+  <div class="pin" data-pin>
+
+    <header class="nav">
+      <a class="logo" href="#" aria-label="Blåbär home">BLÅBÄR<span>bageri</span></a>
+      <nav class="nav__links" aria-label="Main"><a href="#">The cake</a><a href="#">Buns</a><a href="#">Fika boxes</a><a href="#">Visit</a></nav>
+      <a class="nav__order" href="#">Reserve a cake <span aria-hidden="true">→</span></a>
+    </header>
+
+    <div class="grid">
+      <div class="copy">
+        <p class="mono" data-intro>N°1 · the only cake we make</p>
+        <h1 class="title" data-title>
+          <span class="line">Poured</span>
+          <span class="line">at <span class="title__time" data-clock-word>7am.</span></span>
+        </h1>
+        <p class="lead" data-intro>Every morning at seven we pour one mirror glaze over a cardamom sponge and a sour-berry mousse. By four, it's gone.</p>
+
+        <fieldset class="glazes" data-glazes data-intro>
+          <legend class="mono">Today's glaze</legend>
+          <label class="glaze"><input type="radio" name="glaze" value="blueberry" data-ink="#43308F" checked data-c1="#2B2370" data-c2="#4B3BB0" data-c3="#8C7BEA" data-name="Blåbär · blueberry" data-note="Wild Swedish blueberry, a little lemon"><span><i style="--g:#43308F"></i>Blueberry</span></label>
+          <label class="glaze"><input type="radio" name="glaze" value="lingonberry" data-ink="#B3123A" data-c1="#6E0A1F" data-c2="#B3123A" data-c3="#F06A86" data-name="Lingon · lingonberry" data-note="Tart lingonberry, a pinch of cardamom"><span><i style="--g:#B3123A"></i>Lingonberry</span></label>
+          <label class="glaze"><input type="radio" name="glaze" value="cloudberry" data-ink="#A55B0E" data-c1="#A55B0E" data-c2="#E8902A" data-c3="#FFD27A" data-name="Hjortron · cloudberry" data-note="Rare Lapland cloudberry, honey-sweet"><span><i style="--g:#E8902A"></i>Cloudberry</span></label>
+        </fieldset>
+
+        <div class="buy" data-intro>
+          <div class="buy__info"><span class="buy__price">$64</span><span class="mono" data-glaze-name>Blåbär · blueberry</span><span class="buy__note" data-glaze-note>Wild Swedish blueberry, a little lemon</span></div>
+          <button class="btn" type="button" data-reserve>Reserve today's cake</button>
+        </div>
+        <p class="stock mono" data-intro><span class="stock__dot"></span><span data-stock>14 of 40 left today</span></p>
+      </div>
+
+      <div class="stage" data-stage>
+        <div class="tiles" aria-hidden="true" data-tiles></div>
+        <canvas class="pour" data-pour role="img" aria-label="A mirror glaze being poured over a round cake on a blue-and-white plate"></canvas>
+        <button class="replay mono" type="button" data-replay>↻ Pour again</button>
+        <span class="tag tag--a mono" data-tag>18 cm · serves 10</span>
+        <span class="tag tag--b mono" data-tag>Glaze set 2 h</span>
+      </div>
+    </div>
+
+    <!-- The morning, as a horizontal timeline -->
+    <div class="day" aria-label="Our morning">
+      <div class="day__track" data-day>
+        <div class="day__now" data-now><span class="mono" data-now-label>Now</span></div>
+        <div class="step"><b class="mono">05:00</b><span>Ovens on, sponge in</span></div>
+        <div class="step"><b class="mono">06:15</b><span>Mousse set, cakes chilled</span></div>
+        <div class="step is-key"><b class="mono">07:00</b><span>The pour</span></div>
+        <div class="step"><b class="mono">08:00</b><span>Cardamom buns out</span></div>
+        <div class="step"><b class="mono">10:00</b><span>Doors open · pickup</span></div>
+        <div class="step"><b class="mono">12:00</b><span>Same-day reserve closes</span></div>
+        <div class="step"><b class="mono">16:00</b><span>Usually sold out</span></div>
+        <div class="step"><b class="mono">18:00</b><span>Doors close</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="end-note mono">Version 5 · hero section only</p>
+<div class="toast" data-toast role="status" aria-live="polite"></div>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/SplitText.min.js"></script>
+<script src="assets/vendor/motion.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

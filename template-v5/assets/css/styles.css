@@ -1,0 +1,126 @@
+/* =========================================================================
+   BLÅBÄR — Velvet template, version 5 (hero section)
+   Concept: a Scandinavian bakery that makes one cake. The hero is the 7am
+   mirror-glaze pour, drawn live on a canvas over a wall of Delft tiles.
+   Layout: wide-set headline left; tiled stage right; a horizontal
+   timeline of the bakery's morning runs along the bottom.
+   ========================================================================= */
+
+:root {
+  color-scheme: light;
+  /* Color styles */
+  --porcelain: #F5F3EE;  /* Base / Porcelain */
+  --white: #FFFFFF;      /* Base / Glaze White */
+  --cobalt: #1F3FBF;     /* Ink / Delft Cobalt — 7.5:1 on Porcelain */
+  --navy: #14205A;       /* Ink / Navy — 13.7:1 */
+  --steel: #4A5683;      /* Ink / Steel — 6.4:1, secondary text */
+  --tile: #DCE3F7;       /* Tint / Tile Blue */
+  --saffron: #F2B33D;    /* Pop / Saffron (cardamom-bun yellow) */
+  --glaze: #43308F;      /* current glaze ink (text-safe shade), set by JS */
+
+  /* Text styles */
+  --wide: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "DM Mono", ui-monospace, Menlo, monospace;
+
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--porcelain); color: var(--navy); font-family: var(--wide); font-variation-settings: "wdth" 100; font-size: 1rem; line-height: 1.5; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+img, svg, canvas { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+.mono { font-family: var(--mono); font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; }
+
+/* ---------- Shell ---------- */
+.pin { position: relative; min-height: max(720px, 100svh); display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; background: var(--porcelain); }
+
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px max(24px, env(safe-area-inset-right, 0px)) 18px max(24px, env(safe-area-inset-left, 0px)); max-width: 1440px; width: 100%; margin-inline: auto; }
+.logo { font-weight: 900; font-variation-settings: "wdth" 125; font-size: 1.35rem; letter-spacing: .04em; color: var(--cobalt); display: inline-flex; align-items: baseline; gap: 8px; }
+.logo span { font-family: var(--mono); font-weight: 400; font-size: .72rem; letter-spacing: .08em; color: var(--steel); text-transform: lowercase; }
+.nav__links { display: flex; gap: 30px; font-weight: 500; font-size: .95rem; }
+.nav__links a { padding-block: 4px; border-bottom: 1px solid transparent; transition: border-color .3s; }
+.nav__links a:hover { border-color: var(--cobalt); }
+.nav__order { display: inline-flex; gap: 10px; align-items: center; border: 1.5px solid var(--cobalt); color: var(--cobalt); padding: 10px 18px; border-radius: 4px; font-weight: 600; transition: background .3s, color .3s; }
+.nav__order:hover { background: var(--cobalt); color: var(--white); }
+
+/* ---------- Grid ---------- */
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: clamp(24px, 4vw, 72px); max-width: 1440px; width: 100%; margin-inline: auto; padding: 8px max(24px, env(safe-area-inset-right, 0px)) 24px max(24px, env(safe-area-inset-left, 0px)); }
+.copy { display: grid; gap: 22px; min-width: 0; }
+.copy > .mono:first-child { color: var(--cobalt); }
+.title { margin: 0; font-weight: 900; font-variation-settings: "wdth" 125; text-transform: uppercase; font-size: clamp(3rem, 6.4vw, 6.6rem); line-height: .9; letter-spacing: -.02em; color: var(--navy); }
+.title .line { display: block; }
+.title__time { color: var(--glaze); transition: color .6s var(--ease); }
+.lead { margin: 0; font-size: clamp(1.02rem, 1.3vw, 1.18rem); color: var(--steel); max-width: 42ch; }
+
+.glazes { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.glazes legend { float: left; width: 100%; margin-bottom: 8px; color: var(--steel); }
+.glaze { position: relative; }
+.glaze input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.glaze span { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 8px; border: 1.5px solid rgba(20,32,90,.25); border-radius: 999px; font-weight: 600; transition: border-color .3s, background .3s; }
+.glaze span i { width: 24px; height: 24px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.7), transparent 40%), var(--g); display: block; }
+.glaze input:checked + span { border-color: var(--navy); background: var(--white); box-shadow: 0 6px 16px -8px rgba(20,32,90,.4); }
+.glaze input:focus-visible + span { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+
+.buy { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 18px; border-top: 1.5px solid var(--navy); }
+.buy__info { display: grid; gap: 2px; min-width: 0; }
+.buy__price { font-weight: 900; font-variation-settings: "wdth" 125; font-size: 2rem; line-height: 1; }
+.buy__info .mono { color: var(--cobalt); }
+.buy__note { font-size: .88rem; color: var(--steel); }
+.btn { background: var(--cobalt); color: var(--white); border: 0; border-radius: 4px; padding: 16px 24px; font-weight: 700; cursor: pointer; position: relative; overflow: hidden; isolation: isolate; }
+.btn::after { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--navy); transform: translateY(100%); transition: transform .45s var(--ease); }
+.btn:hover::after { transform: translateY(0); }
+.stock { margin: 0; display: inline-flex; align-items: center; gap: 10px; color: var(--steel); }
+.stock__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--saffron); box-shadow: 0 0 0 4px rgba(242,179,61,.25); }
+
+/* ---------- Stage ---------- */
+.stage { position: relative; min-width: 0; height: min(70vh, 640px); min-height: 420px; border-radius: 6px; overflow: hidden; background: var(--white); box-shadow: inset 0 0 0 1.5px var(--navy); }
+.tiles {
+  position: absolute; inset: 0;
+  background-color: var(--white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23FFFFFF'/%3E%3Cpath d='M0 0H120V120H0Z' fill='none' stroke='%23DCE3F7' stroke-width='2'/%3E%3Cg fill='none' stroke='%231F3FBF' stroke-width='2.2' stroke-linecap='round' opacity='.55'%3E%3Cpath d='M0 14 Q10 10 14 0 M120 14 Q110 10 106 0 M0 106 Q10 110 14 120 M120 106 Q110 110 106 120'/%3E%3Ccircle cx='60' cy='60' r='9'/%3E%3Cpath d='M60 38 Q66 50 60 51 Q54 50 60 38Z M60 82 Q66 70 60 69 Q54 70 60 82Z M38 60 Q50 54 51 60 Q50 66 38 60Z M82 60 Q70 54 69 60 Q70 66 82 60Z'/%3E%3Cpath d='M44 44 l6 6 M76 44 l-6 6 M44 76 l6 -6 M76 76 l-6 -6' stroke-width='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  -webkit-mask: radial-gradient(ellipse 70% 60% at 50% 45%, transparent 30%, #000 75%);
+          mask: radial-gradient(ellipse 70% 60% at 50% 45%, transparent 30%, #000 75%);
+}
+.pour { position: absolute; inset: 0; width: 100%; height: 100%; }
+.replay { position: absolute; right: 14px; bottom: 14px; background: var(--white); border: 1.5px solid var(--navy); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .3s, color .3s; }
+.replay:hover { background: var(--navy); color: var(--white); }
+.tag { position: absolute; background: var(--navy); color: var(--white); padding: 6px 10px; border-radius: 3px; font-size: .72rem; }
+.tag--a { left: 14px; top: 14px; }
+.tag--b { right: 14px; top: 14px; background: var(--saffron); color: var(--navy); }
+
+/* ---------- Morning timeline (horizontal) ---------- */
+.day { position: relative; border-top: 1.5px solid var(--navy); overflow: hidden; background: var(--tile); }
+.day__track { position: relative; display: flex; width: max-content; padding: 0 max(24px, env(safe-area-inset-left, 0px)); will-change: transform; }
+.step { width: clamp(170px, 16vw, 230px); flex: none; display: grid; gap: 2px; padding: 16px 18px 18px; border-right: 1px dashed rgba(20,32,90,.3); position: relative; }
+.step b { font-weight: 500; color: var(--cobalt); }
+.step span { font-weight: 600; font-size: .95rem; }
+.step.is-key { background: var(--glaze); color: var(--white); transition: background .6s var(--ease); }
+.step.is-key b { color: var(--white); opacity: .8; }
+.day__now { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--saffron); z-index: 2; left: 0; }
+.day__now span { position: absolute; top: 4px; left: 6px; background: var(--saffron); color: var(--navy); padding: 2px 6px; border-radius: 2px; font-size: .66rem; white-space: nowrap; }
+
+.end-note { margin: 0; text-align: center; color: var(--steel); padding: 40px 20px calc(40px + env(safe-area-inset-bottom, 0px)); }
+.toast { position: fixed; z-index: 50; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, calc(100% + 60px)); background: var(--navy); color: var(--white); border-radius: 4px; padding: 12px 18px; font-weight: 600; white-space: nowrap; visibility: hidden; transition: transform .5s var(--ease), visibility 0s .5s; }
+.toast.is-on { transform: translate(-50%, 0); visibility: visible; transition: transform .5s var(--ease); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .nav__links { display: none; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .stage { order: -1; height: 62vw; min-height: 340px; max-height: 520px; }
+}
+@media (max-width: 520px) {
+  .nav__order { padding: 8px 12px; font-size: .88rem; white-space: nowrap; }
+  .logo span { display: none; }
+  .title { font-size: clamp(2.6rem, 12.5vw, 3.4rem); }
+  .stage { height: 96vw; }
+  .toast { white-space: normal; width: calc(100% - 32px); text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
