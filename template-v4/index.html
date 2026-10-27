@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rotunda Slice Bar</title>
+<meta name="description" content="Eight cakes, one wheel. Spin to pick a slice, build a box of four, pick up in ten minutes.">
+<meta name="theme-color" content="#F9EDB3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- ===================== HERO (version 4) ===================== -->
+<section class="hero" data-hero aria-label="Pick a slice">
+  <div class="pin" data-pin>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker__track" data-ticker><span>By the slice</span><span>Eight cakes daily</span><span>Box of four · $30</span><span>Ready in 10 minutes</span><span>Whole cakes on 48h notice</span></div></div>
+
+    <header class="nav">
+      <a class="logo" href="#" aria-label="Rotunda home">ROTUNDA<small>Slice bar · Est. 2024</small></a>
+      <nav class="nav__links" aria-label="Main"><a href="#">Slices</a><a href="#">Whole cakes</a><a href="#">Catering</a><a href="#">Find us</a></nav>
+      <a class="nav__cta" href="#" data-box-link>Your box <b data-box-count>0/4</b></a>
+    </header>
+
+    <!-- giant outline names drifting horizontally behind everything -->
+    <div class="bgword" aria-hidden="true"><div class="bgword__track" data-bgword></div></div>
+
+    <div class="grid">
+      <div class="info">
+        <p class="eyebrow" data-intro><span class="eyebrow__num" data-index>01</span><span class="eyebrow__sep"></span><span>of 08 · today's wheel</span></p>
+        <h1 class="name" aria-live="polite"><span class="sr-only">Slice of the moment: </span><span data-name>Burnt Basque</span></h1>
+        <p class="tagline" data-intro><em data-tagline>caramelised outside, barely set inside</em></p>
+
+        <dl class="facts" data-intro>
+          <div><dt>Per slice</dt><dd data-price>$9</dd></div>
+          <div><dt>Notes</dt><dd data-notes>Burnt sugar · vanilla · sea salt</dd></div>
+          <div><dt>Contains</dt><dd data-allergens>Dairy · egg · gluten-free</dd></div>
+        </dl>
+
+        <div class="actions" data-intro>
+          <button class="btn" type="button" data-add>Add slice to box <span aria-hidden="true">↗</span></button>
+          <div class="box" aria-label="Your box of four">
+            <svg viewBox="-50 -50 100 100" class="box__pie" data-box-pie aria-hidden="true"><circle r="46" class="box__ring"/></svg>
+            <span class="box__txt"><b data-box-text>Empty box</b><small>4 slices · $30</small></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wheel" data-wheel-wrap>
+        <div class="wheel__pointer" aria-hidden="true" data-pointer><span>Your slice</span></div>
+        <svg class="wheel__svg" data-wheel viewBox="-380 -380 760 760" role="group" aria-label="Sampler cake with eight slices. Use the arrow buttons, drag, or scroll to turn it.">
+          <defs>
+            <radialGradient id="plate4" cx=".5" cy=".45" r=".6"><stop offset=".8" stop-color="#FFFDF6"/><stop offset="1" stop-color="#E9DFC2"/></radialGradient>
+            <radialGradient id="gloss" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            <filter id="drop" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#2A1A12" flood-opacity=".28"/></filter>
+          </defs>
+          <circle r="372" fill="url(#plate4)" filter="url(#drop)" data-plate/>
+          <circle r="345" fill="none" stroke="#E9DFC2" stroke-width="2" stroke-dasharray="2 10"/>
+          <g data-rotor></g>
+          <circle r="304" fill="url(#gloss)" pointer-events="none"/>
+        </svg>
+        <div class="wheel__ctrl">
+          <button type="button" class="ctrl" data-prev aria-label="Previous slice">←</button>
+          <span class="wheel__hint">Drag, scroll or tap a slice</span>
+          <button type="button" class="ctrl" data-next aria-label="Next slice">→</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="strip" data-intro>
+      <span><b>Open</b> 8am – 10pm daily</span>
+      <span><b>Pickup</b> ready in 10 min</span>
+      <span><b>Delivery</b> from $6 · 3 mi</span>
+      <span><b>Whole cakes</b> 48h notice</span>
+    </footer>
+  </div>
+</section>
+
+<p class="end-note">Version 4 · hero section only</p>
+<div class="toast" data-toast role="status" aria-live="polite"></div>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/SplitText.min.js"></script>
+<script src="assets/vendor/motion.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
