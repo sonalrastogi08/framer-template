@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Boutiques & FAQ — Cerise</title>
+<meta name="description" content="Cerise boutiques and opening hours, ordering cut-offs, delivery and shipping, allergens and frequently asked questions.">
+<meta name="theme-color" content="#140A0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="assets/img/cherries.svg">
+<!-- Bakery schema — replace with your own details (docs/v2/FRAMER-BUILD-GUIDE.md) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Bakery","name":"Cerise Pâtisserie de Nuit","url":"https://cerise.example","telephone":"+1-555-0199","priceRange":"$$$","servesCuisine":"French pâtisserie, entremets, celebration cakes","address":{"@type":"PostalAddress","streetAddress":"9 Orchard Street","addressLocality":"New York","addressRegion":"NY","postalCode":"10002","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday","Saturday"],"opens":"14:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"12:00","closes":"20:00"}],"hasMenu":"https://cerise.example/collection"}
+</script>
+</head>
+<body data-page="boutiques">
+<a class="tlink" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
+<header class="nav" data-nav>
+  <div class="wrap nav__in">
+    <nav class="nav__links" aria-label="Main">
+      <a class="tlink" href="collection.html" data-nav="collection">Collection</a>
+      <a class="tlink" href="atelier.html" data-nav="atelier">Atelier</a>
+      <a class="tlink" href="maison.html" data-nav="maison">Maison</a>
+    </nav>
+    <button class="burger" data-open aria-expanded="false" aria-controls="drawer">Menu</button>
+    <a href="index.html" class="brand" aria-label="Cerise home">Cerise<small>Pâtisserie de nuit</small></a>
+    <div class="nav__right">
+      <a class="tlink hide-sm" href="boutiques.html" data-nav="boutiques" aria-current="page">Boutiques</a>
+      <a class="bag tlink" href="collection.html" aria-label="Bag">Bag <b data-bag>00</b></a>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer" data-drawer aria-hidden="true">
+  <div class="drawer__top"><span class="brand" style="text-align:left;justify-items:start">Cerise</span><button class="burger" style="display:inline-block" data-close>Close</button></div>
+  <nav aria-label="Mobile">
+    <a href="index.html"><span>01</span>Home</a>
+    <a href="collection.html"><span>02</span>Collection</a>
+    <a href="atelier.html"><span>03</span>Atelier</a>
+    <a href="maison.html"><span>04</span>Maison</a>
+    <a href="boutiques.html"><span>05</span>Boutiques</a>
+  </nav>
+  <p style="font-size:.85rem;opacity:.85">9 Orchard Street, New York · Open Wed–Sat until midnight</p>
+</div>
+<main id="main">
+<section class="phero">
+  <div class="phero__beam" aria-hidden="true"></div>
+  <div class="wrap phero__grid">
+    <div><div class="crumb"><a href="index.html">Cerise</a><span>/</span><span>Boutiques</span></div><h1>Open <i>till midnight.</i></h1><p class="lead" style="margin-top:28px">Two boutiques and a night-market stall. Come for a slice, stay for the last coffee.</p></div>
+    <img class="phero__art" src="assets/img/truffles.svg" alt="">
+  </div>
+</section>
+
+<section class="sec light">
+  <div class="wrap boutiques" data-boutiques>
+    <div class="blist">
+      <button class="bitem" aria-pressed="true" data-b='{"name":"Orchard Street","open":[null,null,[14,24],[14,24],[14,24],[14,24],[12,20]],"addr":"9 Orchard Street, New York, NY 10002"}'><h3>Orchard Street</h3><span class="label" style="align-self:center">LES</span><p>Dessert bar · 14 seats · Tastings by reservation · Step-free entrance</p></button>
+      <button class="bitem" aria-pressed="false" data-b='{"name":"Williamsburg","open":[[12,20],null,[12,22],[12,22],[12,22],[12,23],[12,23]],"addr":"201 Wythe Avenue, Brooklyn, NY 11249"}'><h3>Williamsburg</h3><span class="label" style="align-self:center">BK</span><p>Takeaway &amp; pickup counter · Same-day delivery hub</p></button>
+      <button class="bitem" aria-pressed="false" data-b='{"name":"Night Market","open":[null,null,null,null,[18,24],[18,24],null],"addr":"Smorgasburg at Night, Pier 5, Brooklyn"}'><h3>Night Market</h3><span class="label" style="align-self:center">FRI–SAT</span><p>Slices &amp; coffrets · Pre-orders by Thursday 18:00</p></button>
+    </div>
+    <aside class="bcard" aria-live="polite">
+      <span class="bcard__status" data-b-status><i></i><span>Open now</span></span>
+      <div class="bcard__clock" data-b-clock>21:42</div>
+      <p class="label" data-b-name>Orchard Street</p>
+      <p style="color:var(--mute);font-size:.9rem" data-b-addr></p>
+      <dl class="hours" data-b-hours></dl>
+      <a class="btn" href="#">Get directions <span class="ln"></span></a>
+    </aside>
+  </div>
+</section>
+
+<section class="sec" id="policy">
+  <div class="wrap">
+    <div class="head"><div><span class="label">Ordering policy</span><h2>The fine <i>print.</i></h2></div><p class="lead">The same four rules appear on every product page and at checkout.</p></div>
+    <div class="policy" data-stagger>
+      <div><strong>12:00</strong><span>Same-day delivery cut-off. Deliveries arrive 18:00–23:00.</span></div>
+      <div><strong>48h</strong><span>Notice for entremets. Four weeks for wedding commissions.</span></div>
+      <div><strong>$150</strong><span>Free delivery in Manhattan &amp; Brooklyn above this. Otherwise $12.</span></div>
+      <div><strong>48h</strong><span>Changes &amp; cancellations. Deposits move once, free of charge.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec light" id="faq">
+  <div class="wrap" style="display:grid;gap:clamp(40px,6vw,72px)">
+    <div class="head" style="margin:0"><div><span class="label">Questions</span><h2>Asked <i>at midnight.</i></h2></div></div>
+    <div class="faq">
+      <details open><summary>How far ahead should I order?</summary><div>Entremets need 48 hours. Pieces marked "Same day" can be ordered until 12:00 for delivery that evening. Wedding and tiered commissions need four weeks.</div></details>
+      <details><summary>Do you have gluten-free or vegan options?</summary><div>Yes. Use the dietary filters in the collection. Our kitchen handles nuts, gluten, dairy and eggs, so we can't promise zero cross-contact.</div></details>
+      <details><summary>How do shipped entremets arrive?</summary><div>Frozen, in recyclable insulation, within two days. Thaw in the fridge for six hours. Mirror glazes stay glossy through freezing.</div></details>
+      <details><summary>Can I add a message?</summary><div>Yes, up to 24 characters on a chocolate plaque, free of charge. Shipped coffrets come with a handwritten card instead.</div></details>
+      <details><summary>Can I book the dessert bar for a private evening?</summary><div>Yes, Mondays and Tuesdays, for up to 20 guests. Use the commission form and choose "Something else".</div></details>
+      <details><summary>What if my order is late or damaged?</summary><div>Write to us within 24 hours with a photo and we'll remake or refund it.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap club">
+    <div style="display:grid;gap:20px"><span class="label">Write to us</span><h2>Bonsoir<i>@cerise.example</i></h2><p class="lead">For orders, press and private evenings. We reply within one working day.</p></div>
+    <form data-contact style="display:grid;gap:24px">
+      <div class="field"><label for="m-name">Name</label><input class="inp" id="m-name" required autocomplete="name"></div>
+      <div class="field"><label for="m-email">Email</label><input class="inp" id="m-email" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="m-msg">Message</label><textarea class="inp" id="m-msg" rows="3" required style="resize:vertical"></textarea></div>
+      <button class="btn btn--solid" type="submit" style="justify-self:start">Send <span class="ln"></span></button>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div style="display:grid;gap:18px;align-content:start">
+        <span class="label">Le Club de Nuit</span>
+        <p class="serif" style="font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.05">First taste of every new collection, sent on the first Friday of the month.</p>
+        <form class="club" data-club style="display:block"><div style="display:flex;border-bottom:1px solid var(--gold)"><label for="club-email" class="label" style="position:absolute;left:-9999px">Email</label><input id="club-email" type="email" required placeholder="Your email" style="flex:1;min-width:0;background:none;border:0;padding:16px 0;outline:none;font-size:1rem"><button type="submit" style="background:none;border:0;color:var(--gold);cursor:pointer;letter-spacing:.24em;text-transform:uppercase;font-size:.72rem">Join →</button></div></form>
+      </div>
+      <div><h4>Collection</h4><ul><li><a class="tlink" href="collection.html">Entremets</a></li><li><a class="tlink" href="collection.html#tarts">Tarts</a></li><li><a class="tlink" href="collection.html#petits">Petits fours</a></li><li><a class="tlink" href="collection.html#coffrets">Coffrets</a></li></ul></div>
+      <div><h4>Maison</h4><ul><li><a class="tlink" href="atelier.html">Atelier &amp; weddings</a></li><li><a class="tlink" href="maison.html">Our story</a></li><li><a class="tlink" href="boutiques.html">Boutiques</a></li><li><a class="tlink" href="boutiques.html#faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>9 Orchard Street, NY</li><li>Wed–Sat 14:00–00:00</li><li>bonsoir@cerise.example</li><li>(555) 0199</li></ul></div>
+    </div>
+    <div class="footer__word" data-shine aria-hidden="true">Cerise</div>
+    <div class="footer__base"><span>© 2026 Cerise Pâtisserie de Nuit</span><span><a class="tlink" href="boutiques.html#policy">Ordering policy</a> · <a class="tlink" href="boutiques.html#faq">Allergens</a> · <a class="tlink" href="#">Privacy</a> · <a class="tlink" href="#">Terms</a></span></div>
+  </div>
+</footer>
+<div class="preview" data-preview aria-hidden="true"><img alt="" data-preview-img></div>
+<div class="cursor" data-cursor aria-hidden="true"></div>
+<div class="toast" data-toast role="status" aria-live="polite"></div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/SplitText.min.js"></script>
+<script src="assets/vendor/motion.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

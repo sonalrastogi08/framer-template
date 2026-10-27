@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cerise Noire — Cerise</title>
+<meta name="description" content="Morello cherry, Tahitian vanilla and almond under a cherry mirror glaze. 16, 20 or 24cm. Order 48 hours ahead.">
+<meta name="theme-color" content="#140A0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="assets/img/cherries.svg">
+<!-- Bakery schema — replace with your own details (docs/v2/FRAMER-BUILD-GUIDE.md) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Bakery","name":"Cerise Pâtisserie de Nuit","url":"https://cerise.example","telephone":"+1-555-0199","priceRange":"$$$","servesCuisine":"French pâtisserie, entremets, celebration cakes","address":{"@type":"PostalAddress","streetAddress":"9 Orchard Street","addressLocality":"New York","addressRegion":"NY","postalCode":"10002","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday","Saturday"],"opens":"14:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"12:00","closes":"20:00"}],"hasMenu":"https://cerise.example/collection"}
+</script>
+</head>
+<body data-page="product">
+<a class="tlink" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
+<header class="nav" data-nav>
+  <div class="wrap nav__in">
+    <nav class="nav__links" aria-label="Main">
+      <a class="tlink" href="collection.html" data-nav="collection" aria-current="page">Collection</a>
+      <a class="tlink" href="atelier.html" data-nav="atelier">Atelier</a>
+      <a class="tlink" href="maison.html" data-nav="maison">Maison</a>
+    </nav>
+    <button class="burger" data-open aria-expanded="false" aria-controls="drawer">Menu</button>
+    <a href="index.html" class="brand" aria-label="Cerise home">Cerise<small>Pâtisserie de nuit</small></a>
+    <div class="nav__right">
+      <a class="tlink hide-sm" href="boutiques.html" data-nav="boutiques">Boutiques</a>
+      <a class="bag tlink" href="collection.html" aria-label="Bag">Bag <b data-bag>00</b></a>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer" data-drawer aria-hidden="true">
+  <div class="drawer__top"><span class="brand" style="text-align:left;justify-items:start">Cerise</span><button class="burger" style="display:inline-block" data-close>Close</button></div>
+  <nav aria-label="Mobile">
+    <a href="index.html"><span>01</span>Home</a>
+    <a href="collection.html"><span>02</span>Collection</a>
+    <a href="atelier.html"><span>03</span>Atelier</a>
+    <a href="maison.html"><span>04</span>Maison</a>
+    <a href="boutiques.html"><span>05</span>Boutiques</a>
+  </nav>
+  <p style="font-size:.85rem;opacity:.85">9 Orchard Street, New York · Open Wed–Sat until midnight</p>
+</div>
+<main id="main">
+<section class="pdp">
+  <div class="pdp__stage" data-drag aria-label="Drag to turn the cake">
+    <img src="assets/img/entremet-cherry.svg" alt="Cerise Noire, a cherry mirror-glaze dome entremet" draggable="false">
+    <span class="pdp__hint">← Drag to turn →</span>
+  </div>
+  <div class="pdp__body">
+    <div style="display:grid;gap:20px">
+      <div class="crumb" style="margin:0"><a href="index.html">Cerise</a><span>/</span><a href="collection.html">Entremets</a><span>/</span><span>N° 01</span></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="tag tag--cherry">Signature</span><span class="tag">48h notice</span></div>
+      <h1>Cerise <i>Noire</i></h1>
+      <p class="lead">Our first entremet and still the one people cross the bridge for. A glossy dome, cut open to show three layers of cherry, vanilla and almond.</p>
+    </div>
+
+    <div class="pyramid" data-stagger>
+      <div><span>Top note</span><p>Cherry mirror glaze, gold leaf, a single kirsch cherry</p></div>
+      <div><span>Heart</span><p>Tahitian vanilla mousse, morello compote</p></div>
+      <div><span>Base</span><p>Toasted almond dacquoise, white chocolate crunch</p></div>
+    </div>
+
+    <div class="field">
+      <span class="lbl">Size</span>
+      <div class="sizes" data-sizes>
+        <button aria-pressed="true" data-price="72"><b>16<small style="font-size:.5em">cm</small></b><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span style="font-size:.72rem;letter-spacing:.14em">SERVES 6–8</span></button>
+        <button aria-pressed="false" data-price="96"><b>20<small style="font-size:.5em">cm</small></b><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span style="font-size:.72rem;letter-spacing:.14em">SERVES 10–12</span></button>
+        <button aria-pressed="false" data-price="128"><b>24<small style="font-size:.5em">cm</small></b><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span style="font-size:.72rem;letter-spacing:.14em">SERVES 16–18</span></button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="plaque">Chocolate plaque message <span style="color:var(--mute);letter-spacing:.1em">(optional)</span></label>
+      <input class="inp" id="plaque" maxlength="24" data-chars placeholder="Joyeux anniversaire, Maya">
+      <span class="inp-count" data-chars-out="plaque">0 / 24</span>
+    </div>
+
+    <div class="buybar">
+      <span class="p" data-price>$72</span>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn--solid" data-add="Cerise Noire">Add to bag <span class="ln"></span></button><a class="btn" href="index.html#order">Delivery options</a></div>
+    </div>
+
+    <div class="notes">
+      <p><span>Order by</span>Wednesday 12:00 for Friday · 48 hours ahead</p>
+      <p><span>Delivery</span>Same evening in NYC from $12 (if ordered 48h ahead) · free over $150</p>
+      <p><span>Pickup</span>Orchard Street or Williamsburg, any slot after 14:00</p>
+      <p><span>Keep</span>Refrigerated, up to 2 days. Rest 20 minutes at room temperature before serving</p>
+    </div>
+
+    <div class="field">
+      <span class="lbl">Allergens</span>
+      <div class="allergen-grid">
+        <div class="has"><b>●</b>Dairy</div><div class="has"><b>●</b>Egg</div><div class="has"><b>●</b>Almond</div><div class="has"><b>●</b>Gluten</div>
+        <div><b>○</b>Peanut</div><div><b>○</b>Soy</div><div><b>○</b>Sesame</div><div><b>○</b>Pistachio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head"><div><span class="label">Pairs well with</span><h2>Finish <i>the evening.</i></h2></div><a class="btn" href="collection.html">Full collection <span class="ln"></span></a></div>
+    <div class="gallery" data-stagger style="margin-top:0">
+      <article class="tile"><div class="tile__img"><img src="assets/img/truffles.svg" alt="Trois Truffes"></div><div style="display:grid;gap:8px"><a class="tile__name tlink" href="product.html">Trois Truffes</a><div class="tile__meta"><span>9 pieces</span><span class="p">$32</span></div></div><button class="tile__add" data-add="Trois Truffes" aria-label="Add Trois Truffes">+</button></article>
+      <article class="tile"><div class="tile__img"><img src="assets/img/macarons-rouge.svg" alt="Macarons Rouges"></div><div style="display:grid;gap:8px"><a class="tile__name tlink" href="product.html">Macarons Rouges</a><div class="tile__meta"><span>Box of 12</span><span class="p">$28</span></div></div><button class="tile__add" data-add="Macarons Rouges" aria-label="Add Macarons Rouges">+</button></article>
+      <article class="tile"><div class="tile__img"><img src="assets/img/eclair.svg" alt="Pistache Velours"></div><div style="display:grid;gap:8px"><a class="tile__name tlink" href="product.html">Pistache Velours</a><div class="tile__meta"><span>Box of 4</span><span class="p">$36</span></div></div><button class="tile__add" data-add="Pistache Velours" aria-label="Add Pistache Velours">+</button></article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div style="display:grid;gap:18px;align-content:start">
+        <span class="label">Le Club de Nuit</span>
+        <p class="serif" style="font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.05">First taste of every new collection, sent on the first Friday of the month.</p>
+        <form class="club" data-club style="display:block"><div style="display:flex;border-bottom:1px solid var(--gold)"><label for="club-email" class="label" style="position:absolute;left:-9999px">Email</label><input id="club-email" type="email" required placeholder="Your email" style="flex:1;min-width:0;background:none;border:0;padding:16px 0;outline:none;font-size:1rem"><button type="submit" style="background:none;border:0;color:var(--gold);cursor:pointer;letter-spacing:.24em;text-transform:uppercase;font-size:.72rem">Join →</button></div></form>
+      </div>
+      <div><h4>Collection</h4><ul><li><a class="tlink" href="collection.html">Entremets</a></li><li><a class="tlink" href="collection.html#tarts">Tarts</a></li><li><a class="tlink" href="collection.html#petits">Petits fours</a></li><li><a class="tlink" href="collection.html#coffrets">Coffrets</a></li></ul></div>
+      <div><h4>Maison</h4><ul><li><a class="tlink" href="atelier.html">Atelier &amp; weddings</a></li><li><a class="tlink" href="maison.html">Our story</a></li><li><a class="tlink" href="boutiques.html">Boutiques</a></li><li><a class="tlink" href="boutiques.html#faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>9 Orchard Street, NY</li><li>Wed–Sat 14:00–00:00</li><li>bonsoir@cerise.example</li><li>(555) 0199</li></ul></div>
+    </div>
+    <div class="footer__word" data-shine aria-hidden="true">Cerise</div>
+    <div class="footer__base"><span>© 2026 Cerise Pâtisserie de Nuit</span><span><a class="tlink" href="boutiques.html#policy">Ordering policy</a> · <a class="tlink" href="boutiques.html#faq">Allergens</a> · <a class="tlink" href="#">Privacy</a> · <a class="tlink" href="#">Terms</a></span></div>
+  </div>
+</footer>
+<div class="preview" data-preview aria-hidden="true"><img alt="" data-preview-img></div>
+<div class="cursor" data-cursor aria-hidden="true"></div>
+<div class="toast" data-toast role="status" aria-live="polite"></div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/SplitText.min.js"></script>
+<script src="assets/vendor/motion.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

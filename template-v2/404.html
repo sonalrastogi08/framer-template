@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Not found — Cerise</title>
+<meta name="description" content="This page was eaten after midnight.">
+<meta name="theme-color" content="#140A0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="assets/img/cherries.svg">
+<!-- Bakery schema — replace with your own details (docs/v2/FRAMER-BUILD-GUIDE.md) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Bakery","name":"Cerise Pâtisserie de Nuit","url":"https://cerise.example","telephone":"+1-555-0199","priceRange":"$$$","servesCuisine":"French pâtisserie, entremets, celebration cakes","address":{"@type":"PostalAddress","streetAddress":"9 Orchard Street","addressLocality":"New York","addressRegion":"NY","postalCode":"10002","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday","Saturday"],"opens":"14:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"12:00","closes":"20:00"}],"hasMenu":"https://cerise.example/collection"}
+</script>
+</head>
+<body data-page="404">
+<a class="tlink" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
+<header class="nav" data-nav>
+  <div class="wrap nav__in">
+    <nav class="nav__links" aria-label="Main">
+      <a class="tlink" href="collection.html" data-nav="collection">Collection</a>
+      <a class="tlink" href="atelier.html" data-nav="atelier">Atelier</a>
+      <a class="tlink" href="maison.html" data-nav="maison">Maison</a>
+    </nav>
+    <button class="burger" data-open aria-expanded="false" aria-controls="drawer">Menu</button>
+    <a href="index.html" class="brand" aria-label="Cerise home">Cerise<small>Pâtisserie de nuit</small></a>
+    <div class="nav__right">
+      <a class="tlink hide-sm" href="boutiques.html" data-nav="boutiques">Boutiques</a>
+      <a class="bag tlink" href="collection.html" aria-label="Bag">Bag <b data-bag>00</b></a>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer" data-drawer aria-hidden="true">
+  <div class="drawer__top"><span class="brand" style="text-align:left;justify-items:start">Cerise</span><button class="burger" style="display:inline-block" data-close>Close</button></div>
+  <nav aria-label="Mobile">
+    <a href="index.html"><span>01</span>Home</a>
+    <a href="collection.html"><span>02</span>Collection</a>
+    <a href="atelier.html"><span>03</span>Atelier</a>
+    <a href="maison.html"><span>04</span>Maison</a>
+    <a href="boutiques.html"><span>05</span>Boutiques</a>
+  </nav>
+  <p style="font-size:.85rem;opacity:.85">9 Orchard Street, New York · Open Wed–Sat until midnight</p>
+</div>
+<main id="main">
+<section class="lost">
+  <canvas class="hero__canvas" data-crumbs aria-hidden="true"></canvas>
+  <div style="display:grid;gap:28px;justify-items:center;position:relative;z-index:1">
+    <span class="label">Error 404</span>
+    <h1>4<i>0</i>4</h1>
+    <p class="lead" style="text-align:center">Only crumbs left. This page was eaten after midnight.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center"><a class="btn btn--solid" href="index.html">Back to Cerise <span class="ln"></span></a><a class="btn" href="collection.html">The collection</a></div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div style="display:grid;gap:18px;align-content:start">
+        <span class="label">Le Club de Nuit</span>
+        <p class="serif" style="font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.05">First taste of every new collection, sent on the first Friday of the month.</p>
+        <form class="club" data-club style="display:block"><div style="display:flex;border-bottom:1px solid var(--gold)"><label for="club-email" class="label" style="position:absolute;left:-9999px">Email</label><input id="club-email" type="email" required placeholder="Your email" style="flex:1;min-width:0;background:none;border:0;padding:16px 0;outline:none;font-size:1rem"><button type="submit" style="background:none;border:0;color:var(--gold);cursor:pointer;letter-spacing:.24em;text-transform:uppercase;font-size:.72rem">Join →</button></div></form>
+      </div>
+      <div><h4>Collection</h4><ul><li><a class="tlink" href="collection.html">Entremets</a></li><li><a class="tlink" href="collection.html#tarts">Tarts</a></li><li><a class="tlink" href="collection.html#petits">Petits fours</a></li><li><a class="tlink" href="collection.html#coffrets">Coffrets</a></li></ul></div>
+      <div><h4>Maison</h4><ul><li><a class="tlink" href="atelier.html">Atelier &amp; weddings</a></li><li><a class="tlink" href="maison.html">Our story</a></li><li><a class="tlink" href="boutiques.html">Boutiques</a></li><li><a class="tlink" href="boutiques.html#faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>9 Orchard Street, NY</li><li>Wed–Sat 14:00–00:00</li><li>bonsoir@cerise.example</li><li>(555) 0199</li></ul></div>
+    </div>
+    <div class="footer__word" data-shine aria-hidden="true">Cerise</div>
+    <div class="footer__base"><span>© 2026 Cerise Pâtisserie de Nuit</span><span><a class="tlink" href="boutiques.html#policy">Ordering policy</a> · <a class="tlink" href="boutiques.html#faq">Allergens</a> · <a class="tlink" href="#">Privacy</a> · <a class="tlink" href="#">Terms</a></span></div>
+  </div>
+</footer>
+<div class="preview" data-preview aria-hidden="true"><img alt="" data-preview-img></div>
+<div class="cursor" data-cursor aria-hidden="true"></div>
+<div class="toast" data-toast role="status" aria-live="polite"></div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/SplitText.min.js"></script>
+<script src="assets/vendor/motion.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

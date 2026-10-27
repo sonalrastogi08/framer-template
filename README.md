@@ -3,6 +3,19 @@
 A Framer Marketplace template for cake and pastry shops. It's built here first as an HTML prototype, then rebuilt
 in Framer.
 
+There are two independent designs:
+
+| | Folder | Demo brand | Direction | Docs |
+|---|---|---|---|---|
+| **Version 1** | `template/` | Velvet Crumb Cake Studio | Light, sunny neighbourhood cake studio: cream, pistachio, strawberry, Fraunces | `docs/` |
+| **Version 2** | `template-v2/` | Cerise Pâtisserie de Nuit | Dark luxury night pâtisserie: black cherry, cherry red, champagne gold, Bodoni Moda | `docs/v2/` |
+
+Both follow the same rulebook and research, and both have 7 pages.
+Version 2's Framer code components are in `framer/code-components-v2/`.
+
+The rest of this README describes version 1. Version 2 has the same structure (`src/`, `build.py`, `assets/`,
+`tools/gen_svgs.py`).
+
 - **Demo brand:** Velvet Crumb Cake Studio (fictional)
 - **Style:** cream, cocoa, pistachio and strawberry; oversized Fraunces wordmark; script accents; rich scroll
   motion
