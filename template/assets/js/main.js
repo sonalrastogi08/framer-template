@@ -268,9 +268,13 @@
       apply();
     });
     // deep links like shop.html#birthday
-    const hash = location.hash.slice(1);
-    const preset = $(`[data-filter] .chip[data-value="${hash}"]`);
-    if (hash && preset) preset.click(); else apply();
+    const fromHash = () => {
+      const hash = location.hash.slice(1);
+      const preset = hash && $(`[data-filter] .chip[data-value="${hash}"]`);
+      if (preset) preset.click(); else apply();
+    };
+    window.addEventListener("hashchange", fromHash);
+    fromHash();
   }
 
   /* ---------------- Multi-step enquiry form ---------------- */
@@ -285,6 +289,10 @@
       steps[i].classList.add("is-active");
       dots.forEach((d, k) => d.classList.toggle("is-done", k <= i));
       label.textContent = `Step ${i + 1} of ${steps.length}`;
+      const last = i === steps.length - 1;
+      $("[data-prev]", form).style.visibility = i ? "visible" : "hidden";
+      $("[data-next]", form).hidden = last;
+      $("[type=submit]", form).hidden = !last;
       if (!reduced) animate(steps[i], { opacity: [0, 1], x: [30, 0] }, { duration: 0.45, ease: [0.22, 1, 0.36, 1] });
     };
     form.addEventListener("click", (e) => {
@@ -304,6 +312,8 @@
     });
     show(0);
   });
+
+  $$("[data-wobble]").forEach((el) => !reduced && animate(el, { rotate: [-8, 8, -8], y: [0, -14, 0] }, { duration: 3, repeat: Infinity, ease: "easeInOut" }));
 
   $$("[data-contact-form]").forEach((f) => f.addEventListener("submit", (e) => {
     e.preventDefault(); f.reset(); toast("📨 Thanks! We reply within one working day.");
