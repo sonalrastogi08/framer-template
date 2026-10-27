@@ -9,9 +9,10 @@ There are two independent designs:
 |---|---|---|---|---|
 | **Version 1** | `template/` | Velvet Crumb Cake Studio | Light, sunny neighbourhood cake studio: cream, pistachio, strawberry, Fraunces | `docs/` |
 | **Version 2** | `template-v2/` | Cerise Pâtisserie de Nuit | Dark luxury night pâtisserie: black cherry, cherry red, champagne gold, Bodoni Moda | `docs/v2/` |
+| **Version 3** (hero only) | `template-v3/` | Sugarstack | Light candy-pop: pastels, ink outlines, a build-your-cake hero that explodes into layers | `docs/v3/` |
 
-Both follow the same rulebook and research, and both have 7 pages.
-Version 2's Framer code components are in `framer/code-components-v2/`.
+All three follow the same rulebook and research. Versions 1 and 2 have 7 pages; version 3 is a hero section only.
+Framer code components for versions 2 and 3 are in `framer/code-components-v2/` and `framer/code-components-v3/`.
 
 The rest of this README describes version 1. Version 2 has the same structure (`src/`, `build.py`, `assets/`,
 `tools/gen_svgs.py`).
