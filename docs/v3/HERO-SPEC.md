@@ -23,10 +23,10 @@ pâtisserie: pastels, rounded type, stickers") that versions 1 and 2 didn't use.
 |---|---|---|
 | Base / Blush Milk | `#FFF3F5` | Background |
 | Base / Paper | `#FFFDF9` | Nav, builder, chips |
-| Ink / Raisin | `#3B1F2B` | Text, every outline and offset shadow (12.9:1 on Blush Milk) |
-| Ink / Muted | `#6E4A58` | Lead text (6.6:1) |
+| Ink / Raisin | `#3B1F2B` | Text, every outline and offset shadow (13.7:1 on Blush Milk) |
+| Ink / Muted | `#6E4A58` | Lead text (7.0:1) |
 | Pop / Bubblegum | `#FF8FB1` | Awning, CTA, sticker |
-| Pop / Raspberry | `#E2426F` | Accent word "your", prices (large text only) |
+| Pop / Raspberry | `#E2426F` | Accent word "your" (3.7:1, large text only) |
 | Pop / Mint | `#9FE2BF` | Stage blob, outline-word shadow |
 | Pop / Butter | `#FFE48A` | Selected chip, belt, sticker |
 | Pop / Lilac | `#C9B6FF` | Sticker, candle |
@@ -59,7 +59,7 @@ pâtisserie: pastels, rounded type, stickers") that versions 1 and 2 didn't use.
 | 1 Free fonts | Bagel Fat One + Bricolage Grotesque (Google) |
 | 2 Framer Motion + GSAP | GSAP for the intro, pin, exploded timeline and belt; Motion for chip and basket springs. The Framer component uses `framer-motion` |
 | 3 Horizontal / zoom / stagger | Conveyor belt (horizontal), cake scale + blob morph (zoom), staggered word pops, layer drop-in, sticker pops |
-| 4 Trendy palette | Candy-pop pastels with heavy ink outlines (the 2025–26 "neo-brutalist soft" look) |
+| 4 Trendy palette | Candy-pop pastels with heavy ink outlines and hard offset shadows, a current "soft neo-brutalist" style |
 | 5 motionsites.ai | A pinned scroll scene that explains the product (exploded anatomy) |
 
 ## In Framer
