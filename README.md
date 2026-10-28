@@ -12,6 +12,7 @@ There are two independent designs:
 | **Version 3** (hero only) | `template-v3/` | Sugarstack | Light candy-pop: pastels, ink outlines, a build-your-cake hero that explodes into layers | `docs/v3/` |
 | **Version 4** (hero only) | `template-v4/` | Rotunda Slice Bar | Butter-yellow food poster: a top-down sampler cake you spin to pick slices for a box of four | `docs/v4/` |
 | **Version 5** (hero only) | `template-v5/` | Blåbär Bakery | Porcelain and Delft cobalt: a live canvas mirror-glaze pour with switchable berry glazes and a morning timeline | `docs/v5/` |
+| **Version 6** (combined, home page) | `template-v6/` | Velvet Crumb | The client's picks: v1 theme, colours, fonts and sections, plus the v4 slice wheel and v2 flavour words | `docs/v6/` |
 
 All five follow the same rulebook and research. Versions 1 and 2 have 7 pages; versions 3–5 are hero sections only.
 Framer code components for versions 2–5 are in `framer/code-components-v2/` to `-v5/`.
