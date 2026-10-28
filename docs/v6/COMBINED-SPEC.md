@@ -28,6 +28,14 @@ colours and typography, plus sections chosen from versions 1, 2 and 4. Versions 
 | 8 | **Instagram gallery:** zoom-out from the centre tile | v1 | Unchanged |
 | — | Footer with the giant "Velvet" wordmark | v1 | Links point to sections on this page |
 
+## Changes after review
+
+| Change | What it does |
+|---|---|
+| **Rolling digit counter** (stats) | Each digit in 12,400 · 4.9 · 48h · 3 spins like an odometer reel and lands left to right when the row scrolls into view. It replays each time the row comes back into view. The final numbers are in the HTML, so screen readers and reduced motion get them directly |
+| **Bestsellers shelf** | Smooth pinned horizontal scroll from 700px up (was 861px). Below that it's a native swipe with **no visible scrollbar**, snap points, mouse drag-to-glide and a progress line. Fixed a bug where a preview opened narrow and then widened kept the swipe mode's scrollbar and clipped the cards |
+| **Moving tickers** (flavour words + review rows) | Both run continuously in a seamless loop, alternating direction. Scrolling briefly speeds them up. Hovering or focusing a review row eases it to a stop so it can be read. Duplicated items are hidden from screen readers. Static with reduced motion |
+
 ## Files
 
 - `template-v6/`: the same structure as v1 (`src/pages`, `src/partials`, `build.py`, `assets/`).

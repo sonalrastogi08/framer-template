@@ -426,7 +426,7 @@
 
     /* ---- Horizontal scroll sections (pinned) ---- */
     const mm = gsap.matchMedia();
-    mm.add("(min-width: 861px)", () => {
+    mm.add("(min-width: 700px)", () => {
       $$("[data-hscroll]").forEach((sec) => {
         const track = $("[data-hscroll-track]", sec);
         const bar = $("[data-hscroll-progress]", sec);
@@ -443,8 +443,26 @@
         });
       });
     });
-    mm.add("(max-width: 860px)", () => {
-      $$("[data-hscroll-track]").forEach((t) => { t.style.overflowX = "auto"; t.style.width = "auto"; t.style.scrollSnapType = "x mandatory"; t.style.paddingBottom = "12px"; $$(":scope > *", t).forEach((c) => (c.style.scrollSnapAlign = "start")); });
+    // Small screens: native swipe instead of a pin. A class (not inline styles) so it is removed
+    // again if the window grows past the breakpoint, e.g. a preview panel that opens narrow.
+    mm.add("(max-width: 699px)", () => {
+      const tracks = $$("[data-hscroll-track]");
+      const offs = tracks.map((t) => {
+        t.classList.add("is-native");
+        // mouse users can grab and fling the shelf; touch keeps its own momentum
+        let down = false, sx = 0, sl = 0, v = 0, lx = 0, lt = 0, raf = 0;
+        const glide = () => { v *= 0.94; t.scrollLeft -= v; if (Math.abs(v) > 0.4) raf = requestAnimationFrame(glide); else t.classList.remove("is-dragging"); };
+        const onDown = (e) => { if (e.pointerType !== "mouse") return; down = true; sx = lx = e.clientX; sl = t.scrollLeft; lt = performance.now(); v = 0; cancelAnimationFrame(raf); t.classList.add("is-dragging"); };
+        const onMove = (e) => { if (!down) return; const now = performance.now(); v = ((e.clientX - lx) / Math.max(1, now - lt)) * 16; lx = e.clientX; lt = now; t.scrollLeft = sl - (e.clientX - sx); };
+        const onUp = () => { if (!down) return; down = false; raf = requestAnimationFrame(glide); };
+        // keep the thin progress line under the shelf in step with the swipe
+        const bar = t.closest("[data-hscroll]")?.querySelector("[data-hscroll-progress]");
+        const onScroll = () => bar && gsap.set(bar, { scaleX: t.scrollLeft / Math.max(1, t.scrollWidth - t.clientWidth) });
+        t.addEventListener("pointerdown", onDown); window.addEventListener("pointermove", onMove); window.addEventListener("pointerup", onUp);
+        t.addEventListener("scroll", onScroll, { passive: true });
+        return () => { t.classList.remove("is-native", "is-dragging"); cancelAnimationFrame(raf); t.removeEventListener("pointerdown", onDown); window.removeEventListener("pointermove", onMove); window.removeEventListener("pointerup", onUp); t.removeEventListener("scroll", onScroll); t.scrollLeft = 0; };
+      });
+      return () => offs.forEach((off) => off());
     });
 
     /* ---- Signature zoom reveal (pinned) ---- */
@@ -469,11 +487,7 @@
     /* ---- Generic parallax ---- */
     $$("[data-parallax]").forEach((el) => gsap.to(el, { y: +el.dataset.parallax * 2, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true } }));
 
-    /* ---- Reviews: two rows drifting in opposite directions on scroll ---- */
-    $$("[data-reviews]").forEach((row) => {
-      const d = +row.dataset.reviews;
-      gsap.fromTo(row, { xPercent: d > 0 ? 0 : -25 }, { xPercent: d > 0 ? -25 : 0, ease: "none", scrollTrigger: { trigger: row, start: "top bottom", end: "bottom top", scrub: true } });
-    });
+    /* ---- Reviews: now continuous tickers (v6, see "Moving tickers" below) ---- */
 
     /* ---- Gallery: grid zooms out from the centre tile ---- */
     $$("[data-gallery]").forEach((g) => {
@@ -510,11 +524,43 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
-  /* ---------------- Flavour words ---------------- */
+  /* ---------------- Moving tickers: flavour words + review rows ----------------
+     Each row's content is duplicated once and slides forever (seamless loop).
+     Rows alternate direction; scrolling briefly speeds them up; hovering a
+     review row pauses it so it can be read. */
   if (!reduced) document.fonts.ready.then(() => {
-    $$("[data-kinetic]").forEach((r) => {
-      const d = +r.dataset.kinetic;
-      gsap.fromTo(r, { xPercent: d < 0 ? 0 : -30 }, { xPercent: d < 0 ? -30 : 0, ease: "none", scrollTrigger: { trigger: r.parentElement, start: "top bottom", end: "bottom top", scrub: 0.5 } });
+    const rows = [
+      ...$$("[data-kinetic]").map((el) => ({ el, dir: +el.dataset.kinetic, speed: 0.045, pause: false })),
+      ...$$("[data-reviews]").map((el) => ({ el, dir: +el.dataset.reviews > 0 ? -1 : 1, speed: 0.035, pause: true })),
+    ];
+    rows.forEach((r) => {
+      const n = r.el.children.length;
+      [...r.el.children].forEach((c) => { const k = c.cloneNode(true); k.setAttribute("aria-hidden", "true"); k.querySelectorAll("a, button").forEach((x) => x.setAttribute("tabindex", "-1")); r.el.appendChild(k); });
+      // loop length = where the first copy starts, measured so flex gaps are included
+      r.loop = () => r.el.children[n].offsetLeft - r.el.children[0].offsetLeft;
+      r.x = r.dir > 0 ? -r.loop() : 0;
+      r.hold = 0; // 0 = moving, 1 = paused (eased)
+      r.hover = false;
+      if (r.pause) {
+        r.el.addEventListener("pointerenter", () => (r.hover = true));
+        r.el.addEventListener("pointerleave", () => (r.hover = false));
+        r.el.addEventListener("focusin", () => (r.hover = true));
+        r.el.addEventListener("focusout", () => (r.hover = false));
+      }
+    });
+    let boost = 0;
+    ScrollTrigger.create({ start: 0, end: "max", onUpdate: (s) => (boost = Math.min(Math.abs(s.getVelocity()) / 2500, 3)) });
+    gsap.ticker.add((t, dt) => {
+      boost *= 0.94;
+      rows.forEach((r) => {
+        const L = r.loop();
+        if (!L) return;
+        r.hold += ((r.hover ? 1 : 0) - r.hold) * 0.08; // glide to a stop / back up to speed
+        r.x += r.dir * r.speed * (1 + boost) * (1 - r.hold) * dt;
+        if (r.x <= -L) r.x += L;
+        if (r.x > 0) r.x -= L;
+        gsap.set(r.el, { x: r.x });
+      });
     });
   });
 
@@ -747,5 +793,59 @@
     // pins were created in two scripts; put them back in page order before measuring
     ScrollTrigger.sort();
     ScrollTrigger.refresh();
+  });
+})();
+
+/* ---------- Rolling digit counter: each digit spins like an odometer reel when the stats scroll into view ---------- */
+(() => {
+  const group = document.querySelector("[data-odo-group]");
+  if (!group) return;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced) return; // the final numbers are already in the HTML
+  const SPINS = 2; // full 0–9 turns before landing (the first digit spins the most)
+
+  const reels = [];
+  [...group.querySelectorAll("[data-odo]")].forEach((el) => {
+    const text = el.textContent.trim();
+    el.setAttribute("aria-label", text);
+    el.textContent = "";
+    let digitIndex = 0;
+    [...text].forEach((ch) => {
+      if (/\d/.test(ch)) {
+        const target = +ch;
+        const turns = Math.max(1, SPINS - Math.floor(digitIndex / 2)); // later digits spin a little less
+        const seq = [];
+        for (let t = 0; t < turns; t++) for (let d = 0; d < 10; d++) seq.push(d);
+        for (let d = 0; d <= target; d++) seq.push(d);
+        const reel = document.createElement("span");
+        reel.className = "odo";
+        reel.setAttribute("aria-hidden", "true");
+        reel.innerHTML = `<span class="odo__strip">${seq.map((d) => `<span>${d}</span>`).join("")}</span>`;
+        el.appendChild(reel);
+        reels.push({ strip: reel.firstChild, steps: seq.length - 1, len: seq.length, order: reels.length });
+        digitIndex++;
+      } else {
+        const c = document.createElement("span");
+        c.className = "odo__char";
+        c.setAttribute("aria-hidden", "true");
+        c.textContent = ch;
+        el.appendChild(c);
+      }
+    });
+  });
+
+  const labels = [...group.querySelectorAll(".stat > span")];
+  const play = () => {
+    gsap.killTweensOf(reels.map((r) => r.strip));
+    reels.forEach((r) => {
+      gsap.fromTo(r.strip, { yPercent: 0 }, { yPercent: (-r.steps / r.len) * 100, duration: 1.6 + r.order * 0.05, delay: r.order * 0.07, ease: "power4.out" });
+    });
+    gsap.fromTo(labels, { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, delay: 0.3, ease: "power3.out" });
+    gsap.fromTo(group.children, { y: 30 }, { y: 0, duration: 1, stagger: 0.08, ease: "expo.out" });
+  };
+  // start parked at 0, then spin every time the row scrolls into view (from below or above)
+  gsap.set(reels.map((r) => r.strip), { yPercent: 0 });
+  document.fonts.ready.then(() => {
+    ScrollTrigger.create({ trigger: group, start: "top 82%", end: "bottom 10%", onEnter: play, onEnterBack: play });
   });
 })();
