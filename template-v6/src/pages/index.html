@@ -94,8 +94,8 @@
         <div class="card__media"><div class="card__badges"><span class="pill pill--sold">Sold out · back Fri</span></div><img src="assets/img/slice-redvelvet.svg" alt="Red Velvet cake"></div>
         <div class="card__body"><a href="#bestsellers" class="card__title">Classic Red Velvet</a>
           <div class="card__meta"><span>Serves 8–10 · 24h notice</span></div>
-          <div class="sizes"><button aria-pressed="true">6"</button><button aria-pressed="false">8"</button></div>
-          <div class="card__meta"><span class="card__price">$52</span><button class="add-btn" aria-label="Sold out" disabled>+</button></div></div>
+          <div class="sizes" aria-disabled="true"><button aria-pressed="true" disabled>6"</button><button aria-pressed="false" disabled>8"</button></div>
+          <div class="card__meta"><span class="card__price">$52</span><button class="notify-btn" type="button" data-notify="Classic Red Velvet">Notify me</button></div></div>
       </article>
       <article class="card" style="--tint:#E7E0F0">
         <div class="card__media"><div class="card__badges"><span class="pill">Box of 6–12</span></div><img src="assets/img/macarons.svg" alt="Macaron gift box"></div>
@@ -104,9 +104,13 @@
           <div class="sizes" data-sizes><button aria-pressed="true" data-price="24">6 pc</button><button aria-pressed="false" data-price="44">12 pc</button></div>
           <div class="card__meta"><span class="card__price" data-price-out>$24</span><button class="add-btn" data-add aria-label="Add Macaron Box to basket">+</button></div></div>
       </article>
-      <div class="hscroll__end"><span class="script" style="color:var(--butter)">there's more…</span><h3>Not sure yet? Try it by the slice</h3><a class="btn btn--light" href="#slices">Spin the slice bar <span class="arrow">→</span></a></div>
+      <div class="hscroll__end">
+        <div class="hscroll__end-top"><span class="script">there's more…</span><h3>Not sure yet? Try it by the slice.</h3><p>8 flavours on the wheel · from $8 a slice · box of four $30</p></div>
+        <img src="assets/img/slice-redvelvet.svg" alt="" class="hscroll__end-img">
+        <a class="btn btn--light btn--small" href="#slices">Spin the slice bar <span class="arrow">→</span></a>
+      </div>
     </div>
-    <div class="hscroll__progress"><span data-hscroll-progress></span></div>
+    <div class="hscroll__progress" aria-hidden="true"><span data-hscroll-progress></span></div>
   </div>
 </section>
 

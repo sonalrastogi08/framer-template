@@ -856,3 +856,12 @@
    Pins can appear after load (breakpoint changes). Sorting before each refresh
    means sections below a new pin, like the gallery zoom, are re-measured after it. */
 ScrollTrigger.addEventListener("refreshInit", () => ScrollTrigger.sort());
+
+/* ---------- "Notify me" on sold-out cards ---------- */
+document.querySelectorAll("[data-notify]").forEach((b) => b.addEventListener("click", () => {
+  if (b.classList.contains("is-done")) return;
+  b.classList.add("is-done");
+  b.textContent = "We'll tell you ✓";
+  const t = document.querySelector("[data-toast]");
+  if (t) { t.textContent = `We'll email you when ${b.dataset.notify} is back`; t.classList.add("is-on"); setTimeout(() => t.classList.remove("is-on"), 2600); }
+}));

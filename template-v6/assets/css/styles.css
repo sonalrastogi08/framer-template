@@ -643,3 +643,37 @@ p { margin: 0; }
 .hscroll__track.is-native > * { scroll-snap-align: start; }
 .hscroll__track.is-native.is-dragging { cursor: grabbing; scroll-snap-type: none; scroll-behavior: auto; user-select: none; }
 .hscroll__track.is-native.is-dragging a, .hscroll__track.is-native.is-dragging img { pointer-events: none; }
+
+/* ---------- Bestsellers shelf polish (v6 review) ---------- */
+/* 1. sold-out card: a "Notify me" action instead of a dead grey button */
+.notify-btn { border: 1.5px solid var(--cocoa); background: transparent; color: var(--cocoa); border-radius: 999px; padding: .55em 1.1em; font-weight: 700; font-size: .82rem; cursor: pointer; transition: background .3s, color .3s; }
+.notify-btn:hover { background: var(--cocoa); color: var(--cream); }
+.notify-btn.is-done { background: var(--pistachio-soft); border-color: transparent; color: var(--olive); cursor: default; }
+.card.is-sold .sizes button { opacity: .45; cursor: not-allowed; }
+.card.is-sold .card__price { color: var(--muted); }
+/* 2. progress: a short, light pill under the shelf instead of a heavy full-width rule */
+.hscroll__progress { width: min(180px, 40vw); height: 4px; margin: 0 auto; background: var(--line); border-radius: 4px; overflow: hidden; }
+.hscroll__progress span { background: var(--strawberry); border-radius: 4px; }
+/* 3. less empty space under the shelf */
+.hscroll__pin { min-height: 100svh; justify-content: center; padding-block: clamp(48px, 6vw, 80px) clamp(32px, 4vw, 48px); gap: clamp(24px, 3vw, 40px); } /* the whole shelf fits one screen while pinned; spare space splits top and bottom */
+.hscroll__track .card__media { aspect-ratio: 5 / 4; }
+.hscroll__track .card__media img { width: 66%; }
+/* 4. end card: tighter type, a picture, a right-sized button */
+.hscroll__end { justify-content: space-between; gap: 20px; padding: 28px; }
+.hscroll__end-top { display: grid; gap: 10px; }
+.hscroll__end .script { color: var(--butter); font-size: 1.7rem; }
+.hscroll__end h3 { font-size: clamp(1.7rem, 2.2vw, 2.1rem); line-height: 1.08; }
+.hscroll__end p { font-size: .85rem; color: rgba(251, 244, 234, .72); }
+.hscroll__end-img { width: 62%; align-self: center; transform: rotate(-6deg); filter: drop-shadow(0 18px 20px rgba(0,0,0,.35)); }
+.hscroll__end .btn { align-self: flex-start; }
+/* short laptop screens: keep the pinned shelf inside one screen */
+@media (min-width: 700px) and (max-height: 820px) {
+  .hscroll__pin { padding-block: 36px 24px; gap: 20px; }
+  .hscroll .section-head h2 { font-size: clamp(2.2rem, 4vw, 3.2rem); }
+  .hscroll .section-head .lead { font-size: 1rem; }
+  .hscroll__track .card__media { aspect-ratio: 16 / 10; }
+  .hscroll__track .card__media img { width: 52%; }
+  .hscroll__track .card { gap: 10px; padding: 12px; }
+  .hscroll__track .card__body { gap: 6px; }
+  .hscroll__end-img { width: 46%; }
+}
