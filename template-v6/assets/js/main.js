@@ -433,7 +433,9 @@
         const dist = () => track.scrollWidth - window.innerWidth;
         const tween = gsap.to(track, {
           x: () => -dist(), ease: "none",
-          scrollTrigger: { trigger: sec, start: "top top", end: () => "+=" + dist(), pin: true, scrub: 1, invalidateOnRefresh: true,
+          // refreshPriority: pins are measured before the triggers below them (e.g. the gallery zoom),
+          // even when the pin is only created later by a breakpoint change
+          scrollTrigger: { trigger: sec, start: "top top", end: () => "+=" + dist(), pin: true, scrub: 1, invalidateOnRefresh: true, refreshPriority: 2,
             onUpdate: (s) => bar && gsap.set(bar, { scaleX: s.progress }) },
         });
         // cards rise & tilt as they enter from the right
@@ -781,7 +783,7 @@
       const startRot = targetFor(0, 0);
       const proxy = { r: startRot };
       st = ScrollTrigger.create({
-        trigger: sec, start: "top top", end: () => `+=${window.innerHeight * 0.5 * (N - 1)}`, pin: "[data-wheel-pin]",
+        trigger: sec, start: "top top", end: () => `+=${window.innerHeight * 0.5 * (N - 1)}`, pin: "[data-wheel-pin]", refreshPriority: 1,
         snap: { snapTo: 1 / (N - 1), duration: { min: 0.2, max: 0.6 }, ease: "power2.inOut", delay: 0.05 },
         onUpdate: (s) => {
           if (dragging) return;
@@ -849,3 +851,8 @@
     ScrollTrigger.create({ trigger: group, start: "top 82%", end: "bottom 10%", onEnter: play, onEnterBack: play });
   });
 })();
+
+/* ---------- Keep every trigger in page order on each refresh ----------
+   Pins can appear after load (breakpoint changes). Sorting before each refresh
+   means sections below a new pin, like the gallery zoom, are re-measured after it. */
+ScrollTrigger.addEventListener("refreshInit", () => ScrollTrigger.sort());
