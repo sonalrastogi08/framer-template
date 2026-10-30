@@ -76,14 +76,13 @@ export default function IcingStatement(props: Props) {
                 ))}
             </p>
             {showPipe ? (
-                <svg aria-hidden="true" viewBox="0 0 1000 60" preserveAspectRatio="none" style={{ display: "block", width: "100%", height: 48, marginTop: 28, overflow: "visible" }}>
+                <svg aria-hidden="true" viewBox="0 0 1000 60" style={{ display: "block", width: "100%", height: "auto", marginTop: 28, overflow: "visible" }}>
                     <motion.path
                         d="M6 30 C 40 6, 70 54, 104 30 S 168 6, 202 30 S 266 54, 300 30 S 364 6, 398 30 S 462 54, 496 30 S 560 6, 594 30 S 658 54, 692 30 S 756 6, 790 30 S 854 54, 888 30"
                         fill="none"
                         stroke={pipeColor}
-                        strokeWidth={14}
+                        strokeWidth={13}
                         strokeLinecap="round"
-                        vectorEffect="non-scaling-stroke"
                         style={{ pathLength: animated ? pipe : 1 }}
                     />
                     <motion.g style={{ opacity: animated ? rosette : 1, scale: animated ? rosette : 1, originX: "930px", originY: "30px" }}>
