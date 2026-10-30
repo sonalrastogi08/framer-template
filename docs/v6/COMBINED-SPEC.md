@@ -43,14 +43,41 @@ colours and typography, plus sections chosen from versions 1, 2 and 4. Versions 
 - `template-v6/`: the same structure as v1 (`src/pages`, `src/partials`, `build.py`, `assets/`).
 - Additions are at the end of `assets/css/styles.css` and `assets/js/main.js`, under "VERSION 6 additions".
 
-## Framer build plan (next step)
+## Framer build (done: landing page)
 
-1. Color and Text Styles from `docs/DESIGN-SYSTEM.md` (v1).
-2. Native sections: header, hero, statement + stats, reviews, visit, footer.
-3. Code components:
-   - `HorizontalScroll` (bestsellers)
-   - `ScrollHighlightText` (statement)
-   - `VelocityMarquee` or two Scroll Transform rows (flavour words)
-   - `GalleryZoom` (gallery)
-   - `SliceWheel` from `framer/code-components-v4/`, with Velvet colours and Fraunces passed as props
-4. CMS: Products (bestsellers and wheel slices), Reviews, Locations.
+Project: https://framer.com/projects/iGJyGdQv1tjKMmGOBOmV (workspace "Personal templates"). Only the
+landing page (`/`) is built; there are no sub-pages.
+
+**Styles.** 14 colour styles (`Base/*`, `Ink/*`, `Accent/*`) and 16 text styles (`Heading/*`, `Body/*`,
+`Script/Accent`) from the v1 tokens, with tablet/phone sizes on the heading styles. Two link styles
+(Nav Link, Footer Link).
+
+**Layout template "Main".** Announcement ticker, sticky glass header, page slot, cocoa footer with the
+big "Velvet" wordmark. Desktop 1200 / Tablet 810 / Phone 390.
+
+**Canvas components.**
+| Component | Variants | Notes |
+|---|---|---|
+| Button | Dark, Ghost, Light (+ hover each) | Label, Link, Arrow controls |
+| Order Modes | Delivery, Pickup, Nationwide, Apps | tabs switch variant on tap, note text changes |
+| Product Card | Default, Sold out (+ hover) | Image, Tint, Title, Meta, Price, Badge colours, sizes |
+
+**Sections on the page (in order).**
+| Section | Built with |
+|---|---|
+| Hero | native layers; word reveal (text effect), cake/badge/copy appear effects, floating treats (loop effect), rotating badge ring |
+| Why Velvet Crumb + stats | native text with word-by-word in-view text effect; `Odometer` code component for the numbers |
+| Bestsellers | `HorizontalScroll` code component (pinned sideways scroll from 700px, swipe row on phone); cards are Product Card instances in its Items slot |
+| Slice bar | `SliceWheel` code component (v6 rewrite, framer-motion only) |
+| Flavour words | two native tickers on the cocoa band (solid + gold outline, opposite directions) |
+| Kind words | two native review tickers, opposite directions, pause on hover |
+| Visit us | native grid of three location cards with SVG maps |
+| Instagram gallery | `GalleryZoom` code component |
+
+**Code components** live in `framer/code-components-v6/` (same source as in the Framer project):
+`Odometer.tsx`, `HorizontalScroll.tsx`, `SliceWheel.tsx`, `GalleryZoom.tsx`. They import only from
+`react`, `framer` and `framer-motion`.
+
+**Not done yet.** CMS collections (Products, Reviews, Locations), a mobile menu drawer (the nav links
+are hidden on tablet/phone), the inline cake image inside the statement, and the shelf's size chips
+are static (no price switch).
