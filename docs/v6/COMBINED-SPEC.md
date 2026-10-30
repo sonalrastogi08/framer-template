@@ -117,3 +117,8 @@ Built from `template/src/pages/custom-cakes.html` (v1) in the Velvet style, same
 | Hero lead and buttons fade-up | Appear on mount with delays |
 
 Not carried over: pinned horizontal scroll for the portfolio (the row is CMS-driven and scrolls natively), magnetic buttons, form stepper transitions.
+
+### Custom page: pinned scrolling (v1 behaviour)
+
+- **Portfolio:** the CMS gallery row sits inside the `HorizontalScroll` component, so vertical scroll moves it sideways while the section is pinned, with a progress bar. Below 700px it becomes a native swipe row.
+- **How it works:** `PinnedProcess.tsx` pins the section; the line fills from step 1 to 5 as you scroll and each step lights up when the line reaches it. The page only continues once the line is full. Below 700px it is a plain stack. "Scroll Length" controls how long it stays pinned.
