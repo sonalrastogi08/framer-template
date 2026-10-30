@@ -81,3 +81,13 @@ big "Velvet" wordmark. Desktop 1200 / Tablet 810 / Phone 390.
 **Not done yet.** CMS collections (Products, Reviews, Locations), a mobile menu drawer (the nav links
 are hidden on tablet/phone), the inline cake image inside the statement, and the shelf's size chips
 are static (no price switch).
+
+## Framer: Shop cakes page (`/shop`)
+
+Built from `template/src/pages/shop.html` (v1) in the Velvet style. Uses the same layout template as the landing page.
+
+- **CMS:** `Products` collection (12 items): Title, Slug, Category, Occasions, Dietary, Image, Tint, Meta, Price, Badge + colours, three size labels, Third Size, Sold Out.
+- **Filters:** Category, Occasion and Dietary chips (Filter Chip component, Default/Active). Each chip sets a page variable (string, optional); the collection list filters with `contains` on the matching product field, so unset means no filter. Empty state shows "No bakes match… yet."
+- **Sections:** page hero (Display heading style, cake image), free-delivery bar, sticky filter sidebar plus 3-column product grid (Product Card bound to CMS fields; sold-out variant from the Sold Out field), custom-cake CTA band.
+- **Responsive:** tablet 2 columns with filters on top, phone single column.
+- **Not built:** sort dropdown, product detail pages, working price switch on size chips, the "Start a custom order" button links to email.
