@@ -122,3 +122,15 @@ Not carried over: pinned horizontal scroll for the portfolio (the row is CMS-dri
 
 - **Portfolio:** the CMS gallery row sits inside the `HorizontalScroll` component, so vertical scroll moves it sideways while the section is pinned, with a progress bar. Below 700px it becomes a native swipe row.
 - **How it works:** `PinnedProcess.tsx` pins the section; the line fills from step 1 to 5 as you scroll and each step lights up when the line reaches it. The page only continues once the line is full. Below 700px it is a plain stack. "Scroll Length" controls how long it stays pinned.
+
+## Framer: Our story page (`/our-story`)
+
+Built from `template/src/pages/about.html` (v1), same layout template.
+
+- **Hero:** "Started with one oven." (char rise), cupcake image with float-in and scroll drift.
+- **Statement:** word-by-word reveal on scroll.
+- **Timeline "How we rose.":** pinned horizontal scroll (`HorizontalScroll`) with six cards, 2019 to Now, progress bar.
+- **Values:** three cards (No shortcuts, Local first, Clear allergens), staggered in.
+- **Team:** four portrait tiles with initials, hover lift. Press row below.
+- **Responsive:** grids reflow (3 to 2 to 1 for values, 4 to 2 for team); timeline becomes a swipe row below 700px.
+- Footer now links to Shop, Our story and Custom & wedding.
