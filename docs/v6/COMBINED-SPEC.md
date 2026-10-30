@@ -91,3 +91,15 @@ Built from `template/src/pages/shop.html` (v1) in the Velvet style. Uses the sam
 - **Sections:** page hero (Display heading style, cake image), free-delivery bar, sticky filter sidebar plus 3-column product grid (Product Card bound to CMS fields; sold-out variant from the Sold Out field), custom-cake CTA band.
 - **Responsive:** tablet 2 columns with filters on top, phone single column.
 - **Not built:** sort dropdown, product detail pages, working price switch on size chips, the "Start a custom order" button links to email.
+
+## Framer: Custom & wedding page (`/custom-cakes`)
+
+Built from `template/src/pages/custom-cakes.html` (v1) in the Velvet style, same layout template.
+
+- **Hero:** "Made for your day." (Display style), two buttons that scroll to the enquiry form and the tasting box, wedding cake image (hidden on phone).
+- **Portfolio:** "Recent commissions", a sideways-scrolling row bound to the `Cake Gallery` CMS collection (Title, Slug, Details, Image, Tint; 6 items).
+- **How it works:** olive band with the price guide ($8, $10, $350) and five steps with staggered appear effects.
+- **Enquiry:** one Framer form (native inputs) with five numbered groups: occasion, date/servings/handoff, flavour and dietary, design and budget, contact. Submit uses the `Submit Button` component.
+- **Tasting box:** butter band, "Six flavours, $45."
+- **Differences from v1:** the form is one scrolling form instead of a 5-step stepper; the photo upload field is not included (Framer has no file input node); the tasting-box button opens an email.
+- **To do in Framer:** set the form's destination (Form settings, Send to email or webhook).
