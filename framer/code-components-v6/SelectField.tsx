@@ -12,7 +12,7 @@ interface Props {
     placeholder: string
     options: Option[]
     required: boolean
-    height: number
+    fieldHeight: number
     radius: number
     ink: string
     placeholderColor: string
@@ -28,7 +28,7 @@ interface Props {
  * @framerSupportedLayoutHeight auto
  */
 export default function SelectField(props: Props) {
-    const { name, placeholder, options = [], required, height, radius, ink, placeholderColor, fill, border, borderFocus, font, style } = props
+    const { name, placeholder, options = [], required, fieldHeight, radius, ink, placeholderColor, fill, border, borderFocus, font, style } = props
     const [value, setValue] = React.useState("")
     const [focus, setFocus] = React.useState(false)
     const empty = value === ""
@@ -44,7 +44,7 @@ export default function SelectField(props: Props) {
                 style={{
                     ...font,
                     width: "100%",
-                    height,
+                    height: fieldHeight,
                     boxSizing: "border-box",
                     appearance: "none",
                     WebkitAppearance: "none",
@@ -80,7 +80,7 @@ SelectField.defaultProps = {
     placeholder: "Choose…",
     options: [{ label: "Option 1" }, { label: "Option 2" }],
     required: false,
-    height: 52,
+    fieldHeight: 52,
     radius: 16,
     ink: "#2B1611",
     placeholderColor: "rgba(122,97,88,0.55)",
@@ -95,7 +95,7 @@ addPropertyControls(SelectField, {
     options: { type: ControlType.Array, title: "Options", control: { type: ControlType.Object, controls: { label: { type: ControlType.String, title: "Label" } } } },
     required: { type: ControlType.Boolean, title: "Required" },
     font: { type: ControlType.Font, title: "Font", controls: "extended", defaultFontType: "sans-serif", defaultValue: { fontSize: 15 } },
-    height: { type: ControlType.Number, title: "Height", min: 36, max: 80, unit: "px" },
+    fieldHeight: { type: ControlType.Number, title: "Field height", min: 36, max: 80, unit: "px" },
     radius: { type: ControlType.Number, title: "Radius", min: 0, max: 40, unit: "px" },
     ink: { type: ControlType.Color, title: "Selected text" },
     placeholderColor: { type: ControlType.Color, title: "Placeholder" },
