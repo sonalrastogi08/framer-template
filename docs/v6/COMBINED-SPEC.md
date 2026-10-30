@@ -103,3 +103,17 @@ Built from `template/src/pages/custom-cakes.html` (v1) in the Velvet style, same
 - **Tasting box:** butter band, "Six flavours, $45."
 - **Differences from v1:** the form is one scrolling form instead of a 5-step stepper; the photo upload field is not included (Framer has no file input node); the tasting-box button opens an email.
 - **To do in Framer:** set the form's destination (Form settings, Send to email or webhook).
+
+### Custom & wedding page: animations (from v1 ANIMATION-SPEC)
+
+| v1 effect | In Framer |
+|---|---|
+| Hero headline chars rise (SplitText) | Text effect, per character, on mount |
+| Section headings masked rise | Text effect, per line, on view |
+| Page-hero image float-in plus scroll drift | Appear effect (y 120, rotate -10, 1.4s) plus Scroll transform (y 140, rotate 8) |
+| Process line draw plus steps stagger | Line frame inside a clipped track, slides in on scroll; steps appear with 0.1s stagger. Desktop only (tablet and phone keep per-step lines) |
+| `data-reveal` blocks | Appear on view (how-it-works band, form card, tasting band) |
+| Portfolio cards rise, hover lift | Appear on view, hover y -8 |
+| Hero lead and buttons fade-up | Appear on mount with delays |
+
+Not carried over: pinned horizontal scroll for the portfolio (the row is CMS-driven and scrolls natively), magnetic buttons, form stepper transitions.
