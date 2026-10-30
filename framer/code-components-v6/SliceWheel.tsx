@@ -147,7 +147,9 @@ export default function SliceWheel(props: Props) {
     const reduce = useReducedMotion()
     const isCanvas = RenderTarget.current() === RenderTarget.canvas
 
+    const rotor = React.useRef<SVGGElement>(null)
     useMotionValueEvent(rot, "change", (r) => {
+        rotor.current?.setAttribute("transform", `rotate(${r})`)
         const k = indexFor(r)
         if (k !== i) setI(k)
     })
@@ -326,7 +328,7 @@ export default function SliceWheel(props: Props) {
                     </defs>
                     <circle r={372} fill="url(#vc-plate)" filter="url(#vc-drop)" />
                     <circle r={345} fill="none" stroke="#EADFCD" strokeWidth={2} strokeDasharray="2 10" />
-                    <motion.g style={{ rotate: rot, originX: "0px", originY: "0px" }}>
+                    <g ref={rotor} transform={`rotate(${rot.get()})`}>
                         {wedges.map(({ w, k, a0, tops }) => {
                             const [dx, dy] = pol(k === i ? PULL : 0, a0 + STEP / 2)
                             return (
@@ -343,7 +345,7 @@ export default function SliceWheel(props: Props) {
                                 </motion.g>
                             )
                         })}
-                    </motion.g>
+                    </g>
                     <circle r={304} fill="url(#vc-gloss)" pointerEvents="none" />
                 </svg>
                 <div
