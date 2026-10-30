@@ -37,7 +37,9 @@ const roman = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi"
 export default function FlavourPreviewList(props: Props) {
     const { items = [], nameFont, bodyFont, ink, muted, accent, line, frameWidth, style } = props
     const [active, setActive] = React.useState<number | null>(null)
-    const [touch, setTouch] = React.useState(false)
+    const [touchDevice, setTouchDevice] = React.useState(false)
+    const [narrow, setNarrow] = React.useState(false)
+    const touch = touchDevice || narrow
     const root = React.useRef<HTMLDivElement>(null)
     const reduce = useReducedMotion()
     const isCanvas = RenderTarget.current() === RenderTarget.canvas
@@ -51,7 +53,12 @@ export default function FlavourPreviewList(props: Props) {
     const frameH = frameWidth * 1.2
 
     React.useEffect(() => {
-        setTouch(window.matchMedia("(hover: none)").matches)
+        setTouchDevice(window.matchMedia("(hover: none)").matches)
+        const el = root.current
+        if (!el) return
+        const ro = new ResizeObserver(([e]) => setNarrow(e.contentRect.width < 720))
+        ro.observe(el)
+        return () => ro.disconnect()
     }, [])
 
     const onMove = (e: React.PointerEvent) => {
@@ -87,7 +94,7 @@ export default function FlavourPreviewList(props: Props) {
                         style={{
                             display: "grid",
                             gridTemplateColumns: touch ? "56px 1fr auto" : "56px 1.4fr 1.2fr auto 90px",
-                            gap: 24,
+                            gap: touch ? 16 : 24,
                             alignItems: "center",
                             padding: "24px 0",
                             borderBottom: `1px solid ${line}`,
