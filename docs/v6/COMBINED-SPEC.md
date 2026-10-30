@@ -134,3 +134,14 @@ Built from `template/src/pages/about.html` (v1), same layout template.
 - **Team:** four portrait tiles with initials, hover lift. Press row below.
 - **Responsive:** grids reflow (3 to 2 to 1 for values, 4 to 2 for team); timeline becomes a swipe row below 700px.
 - Footer now links to Shop, Our story and Custom & wedding.
+
+## Framer: Visit & FAQ page (`/visit`)
+
+Built from `template/src/pages/visit.html` (v1), same layout template.
+
+- **Hero:** "Come say hello." with the tart image.
+- **Locations:** three cards (Mercer Lane, West Village, Market stall) with map art, hours, services and a directions button.
+- **Ordering policy:** 12pm / 48h / $100 / 48h grid.
+- **FAQ:** `FAQ Item` canvas component with Open and Closed variants (tap to toggle, plus icon turns into a cross). Six questions, the first open. The list has a flow effect so items below slide smoothly.
+- **Contact:** form with name, email, `SelectField` topic, message and `Submit Button`. Set the form destination in Framer.
+- Responsive and animated like the other pages. Nav "Visit us" still points to the home page visit section.
